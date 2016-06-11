@@ -4,6 +4,13 @@ This is a course designed to introduce you to the MEAN stack and web development
 
 MEAN stands for MongoDB, Express, AngularJS, and NodeJS. 
 
+## Table Of Contents
+* [Setup](#setting-up)
+* [Branch 0 Instructions](instructions/branch0.md)
+* [Branch 1 Instructions](instructions/branch1.md)
+* [Branch 2 Instructions](instructions/branch2.md)
+* [Branch 3 Instructions](instructions/branch3.md)
+
 ## Setting Up
 1. Log into your public GitHub account. If you don’t already have one, go to https://github.com to sign up for a new account. 
 2. Fork this repository to your account

@@ -12,9 +12,10 @@ app.use(express.static(__dirname + '/public')); // Sets the location of the stat
 app.use(morgan('dev')); // Logs every HTTP request to the console
 app.use(bodyParser.json()); // Parses app
 
-app.listen(port); 
-console.log("App listening on port: ", port);
-
 // CONNECT TO MONGO/MONGOOSE
 
 // DEFINE MONGOOSE MODELS
+
+app.listen(port); 
+console.log("App listening on port: ", port);
+
