@@ -18,4 +18,5 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
   `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
   `git fetch --all`
 11.  Verify that you have all of the available branches (steps 0 through 4) on your virtual machine. Use the command `git branch`
-12.  Update the config file to point to the newly forked & cloned repository: ![](http://i66.tinypic.com/315bkep.jpg) ![](http://i64.tinypic.com/30sae7k.jpg)
+12.  Update the config file to point to the newly forked & cloned repository: 
+![](http://i66.tinypic.com/315bkep.jpg) ![](http://i64.tinypic.com/30sae7k.jpg)
