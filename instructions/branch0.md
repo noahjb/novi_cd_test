@@ -28,6 +28,12 @@ In our `package.json` file, we indicated that our main file is the `server.js` f
 
 At the top of the file, we're importing the modules that we'll be using to build this application. Then, we have some basic setup to define the port, and define use of middleware.
 
+### Setting up the Database
 - [ ] Connect to Mongoose
-- [ ] Set up Mongoose Models
+- `mongoose.connect('mongodb://localhost/app'); `
+- [ ] Set up Mongoose Model for ToDo
+- Initialize a variable called ToDo and set it equal to the following:
+  -  `mongoose.model('Todo', { text: { type: String, default: '' } });`
+
+
 
