@@ -6,9 +6,9 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 
 ## Table Of Contents
 * [Setup](#setting-up)
-* [Branch 0 Instructions](instructions/branch0.md): Setting up the database
-* [Branch 1 Instructions](instructions/branch1.md): Setting up routes
-* [Branch 2 Instructions](instructions/branch2.md): Building the Angular Front-end
+* [Section 0 Instructions](instructions/branch0.md): Setting up the database
+* [Section 1 Instructions](instructions/branch1.md): Setting up routes
+* [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
 
 ## Setting Up
 1. Log into your public GitHub account. If you don’t already have one, go to https://github.com to sign up for a new account. 
@@ -23,6 +23,18 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 10.  Run the following command: (Note: you may get an error, don't worry)
   `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
   `git fetch --all`
-11.  Verify that you have all of the available branches (steps 0 through 4) on your virtual machine. Use the command `git branch`
+11.  Verify that you have all of the available branches on your virtual machine. Use the command `git branch`
 12.  Update the config file to point to the newly forked & cloned repository: 
 ![](http://i66.tinypic.com/315bkep.jpg) ![](http://i64.tinypic.com/30sae7k.jpg)
+13.  Checkout the starter branch: `git checkout starter`
+
+## Course Format
+
+The Course is split up into 3 sections. Each section has a corresponding branch that contains all of the completed code. So, if you do not complete the setup steps for a section, you can switch to the pre-existing branch. For instance, Branch1 will contain all of the completed code from both Section 0 and Section 1.  
+
+- Starter: This branch is going to be your main branch for development
+- Branch0: Contains completed database connection and model setup
+- Branch1: Contains completed API routes and Angular routes setup
+- Branch2: Contains completed Angular code and HTML view code
+
+You can checkout any branch using the following command: `git checkout [BRANCH NAME]`
