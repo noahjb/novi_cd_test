@@ -34,13 +34,19 @@ In this section, we will connect to the database and set up a model. A model is 
 
 - [ ] Connect to Mongoose
 - `mongoose.connect('mongodb://localhost/app'); `
-- [ ] Set up a Mongoose Model to define the structure of the ToDo object in the databse
-- Initialize a variable called ToDo and set it equal to the following:
-  -  `mongoose.model('Todo', { text: { type: String, default: '' } });`
-  -  The first argument to mongoose.model() is the name of the model, and the second argument is the schema that defines the properties on that model. We could add additional properties to the ToDo model, such as a _Due Date_, _ID_, _Dependencies_, _Time To Complete_.  
+- [ ] Set up a Mongoose Model to define the structure of the ToDo object in the database
+  - [ ] Create a Mongoose Schema:
+    - Initialize a variable called toDoSchema and set it equal to a `new mongoose.Schema({...})`
+      - Inside of the function call, pass it an object that defines the properties on that model:
+        - `{ text: {type: String, default: ''}, complete: {type: Boolean, default: false} }`
+  - [ ] Create a Mongoose Model:
+    - Initialize a variable called ToDo and set it equal to the following:
+      -  `mongoose.model('ToDo', toDoSchema);`
+      -  The first argument to mongoose.model() is the name of the model, and the second argument is the schema that defines the properties on that model. 
+      - Mongoose automatically creates an `_id` for every instance of the ToDo object in the database
 
 For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](http://mongoosejs.com/docs/models.html)
 
 ## Next Section
 
-In the next section, we'll be setting up the back-end routes. [Branch 1 Instructions](./branch1.md)
+In the next section, we'll be setting up the back-end routes. [Section 1 Instructions](./branch1.md)

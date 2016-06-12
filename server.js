@@ -13,8 +13,16 @@ app.use(morgan('dev')); // Logs every HTTP request to the console
 app.use(bodyParser.json()); // Parses app
 
 // CONNECT TO MONGO/MONGOOSE
+mongoose.connect('mongodb://localhost/app');
 
-// DEFINE MONGOOSE MODELS
+// DEFINE MONGOOSE SCHEMA
+var toDoSchema = new mongoose.Schema({
+  text: {type: String, default: ''},
+  complete: {type: Boolean, default: false}
+});
+
+// DEFINE MONGOOSE MODEL
+var ToDo = mongoose.model('ToDo', toDoSchema);
 
 app.listen(port); 
 console.log("App listening on port: ", port);
