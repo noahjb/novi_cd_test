@@ -25,6 +25,17 @@ var toDoSchema = new mongoose.Schema({
 var ToDo = mongoose.model('ToDo', toDoSchema);
 
 // Set up the `/GET` route for `/api/todos`
+app.get('/api/todos', function(req, res){
+  // Use Mongoose's .find() method to retrieve all todos from database
+  ToDo.find(function(err, todos){
+    // Error handling - if we receive an error from Mongo, send it back as a response. Nothing after res.send(err) will execute
+    if (err) {
+      res.send(err);
+    }
+    // If no error, respond with the todos as a json object
+    res.json(todos);
+  });
+});
 // Set up the `/POST` route for `/api/todos`
 // Set up the `/DELETE` route for `/api/todos/:todo_id`
 
