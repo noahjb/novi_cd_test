@@ -14,7 +14,10 @@ app.use(bodyParser.json()); // Parses app
 
 // CONNECT TO MONGO/MONGOOSE
 
-// DEFINE MONGOOSE MODELS
+// DEFINE MONGOOSE SCHEMA
+
+// DEFINE MONGOOSE MODEL
+
 
 app.listen(port); 
 console.log("App listening on port: ", port);

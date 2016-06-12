@@ -21,7 +21,9 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 8.  Verify that you now have a node-todo folder in the folder structure, which is located on the left-hand side of the container. You may need to right-click the left-hand side of the container and click refresh: ![](http://i63.tinypic.com/52yzyq.jpg)
 9.  Within the terminal, navigate to the node-todo folder by entering the following command: `cd mean_adsk`
 10.  Run the following command: (Note: you may get an error, don't worry)
+
   `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
+
   `git fetch --all`
 11.  Verify that you have all of the available branches on your virtual machine. Use the command `git branch`
 12.  Update the config file to point to the newly forked & cloned repository: 
