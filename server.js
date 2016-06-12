@@ -78,6 +78,11 @@ app.delete('/api/todos/:todo_id', function(request, response){
   });
 });
 
+// Set up the GET route handler for all otherwise unspecified routes. This will render the HTML page.
+app.get('*', function(request, response){
+  // __dirname is a keyword that pulls the absolute path to the current file
+  response.sendFile(__dirname + '/public/index.html');
+});
 
 app.listen(port); 
 console.log("App listening on port: ", port);
