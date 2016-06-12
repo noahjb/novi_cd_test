@@ -25,20 +25,59 @@ var toDoSchema = new mongoose.Schema({
 var ToDo = mongoose.model('ToDo', toDoSchema);
 
 // Set up the `/GET` route for `/api/todos`
-app.get('/api/todos', function(req, res){
+app.get('/api/todos', function(request, response){
   // Use Mongoose's .find() method to retrieve all todos from database
   ToDo.find(function(err, todos){
     // Error handling - if we receive an error from Mongo, send it back as a response. Nothing after res.send(err) will execute
     if (err) {
-      res.send(err);
+      response.send(err);
     }
     // If no error, respond with the todos as a json object
-    res.json(todos);
+    response.json(todos);
   });
 });
+
 // Set up the `/POST` route for `/api/todos`
+app.post('/api/todos', function(request, response){
+  // Use Mongoose's .create() method to create a new item. 
+  ToDo.create({
+    // The text comes from the AJAX request sent from Angular.
+    text: request.body.text,
+    complete: false
+  }, function(err, todo){
+    // Error Handling
+    if (err) { 
+      response.send(err); 
+    }
+    // Retrieve all Todos after creating another 
+    ToDo.find(function(err, todos){
+      if (err) {
+        response.send(err);
+      }
+      response.json(todos);
+    });
+  });
+});
+
 // Set up the `/DELETE` route for `/api/todos/:todo_id`
+app.delete('/api/todos/:todo_id', function(request, response){
+  // Use Mongoose's ToDo.remove() function to remove one from the database
+  ToDo.remove({
+    _id: request.params.todo_id
+  }, function(err, todo){
+    if (err) {
+      response.send(err);
+    }
+    // Retrieve all Todos after deleting one
+    ToDo.find(function(err, todos){
+      if (err) {
+        response.send(err);
+      }
+      response.json(todos);
+    });
+  });
+});
+
 
 app.listen(port); 
 console.log("App listening on port: ", port);
-
