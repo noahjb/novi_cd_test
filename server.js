@@ -24,6 +24,10 @@ var toDoSchema = new mongoose.Schema({
 // DEFINE MONGOOSE MODEL
 var ToDo = mongoose.model('ToDo', toDoSchema);
 
+// Set up the `/GET` route for `/api/todos`
+// Set up the `/POST` route for `/api/todos`
+// Set up the `/DELETE` route for `/api/todos/:todo_id`
+
 app.listen(port); 
 console.log("App listening on port: ", port);
 
