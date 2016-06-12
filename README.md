@@ -9,6 +9,7 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 * [Section 0 Instructions](instructions/branch0.md): Setting up the database
 * [Section 1 Instructions](instructions/branch1.md): Setting up routes
 * [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
+* [Format](#course-format): Explanation of branches and processes
 
 ## Setting Up
 1. Log into your public GitHub account. If you don’t already have one, go to https://github.com to sign up for a new account. 
