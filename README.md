@@ -9,6 +9,7 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 * [Section 0 Instructions](instructions/branch0.md): Setting up the database
 * [Section 1 Instructions](instructions/branch1.md): Setting up routes
 * [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
+* [Format](#course-format): Explanation of branches and processes
 
 ## Setting Up
 1. Log into your public GitHub account. If you don’t already have one, go to https://github.com to sign up for a new account. 
@@ -21,12 +22,15 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 8.  Verify that you now have a node-todo folder in the folder structure, which is located on the left-hand side of the container. You may need to right-click the left-hand side of the container and click refresh: ![](http://i63.tinypic.com/52yzyq.jpg)
 9.  Within the terminal, navigate to the node-todo folder by entering the following command: `cd mean_adsk`
 10.  Run the following command: (Note: you may get an error, don't worry)
+
   `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
+
   `git fetch --all`
 11.  Verify that you have all of the available branches on your virtual machine. Use the command `git branch`
-12.  Update the config file to point to the newly forked & cloned repository: 
+12.  Update the config file to point to the newly forked & cloned repository. Right click on your connection and choose "Config": 
 ![](http://i66.tinypic.com/315bkep.jpg) ![](http://i64.tinypic.com/30sae7k.jpg)
 13.  Checkout the starter branch: `git checkout starter`
+14.  Install dependencies by running `npm install`
 
 ## Course Format
 
