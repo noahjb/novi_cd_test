@@ -40,6 +40,8 @@ Angular Controllers control the data flow within Angular applications.
 
 ## Setting up Controller Methods
 
+### GET the page
+
 When we load the `mainController`, the first thing we'll do is send an HTTP request to the server in order to get all of the todo items from the database. Do you remember the server code we wrote? 
 
 We built a request handler `app.get('/api/todos'...` that returns all of the todos from the database. Let's write the client-side code that will interact with that endpoint.
@@ -71,6 +73,22 @@ On a successful `GET` request to the `/api/todos` route, we'll expect the respon
           console.log("received an error from the server:", error);
         });
 
+### Status Check
+
+At this point, you should be able to click the RUN button (looks like a play button) on the CodeAnywhere editor. It should open a page that contains a single form element, with your placeholder text.
+
+![](http://i64.tinypic.com/sq1mjd.jpg)
+
+Let's open up Chrome Dev Tools (Mac: command + option + i) and take a look at the Console tab. 
+
+We can see that upon the initial page load, we sent a `GET` request to our own server and then responded with an empty object.
+
+![](http://i64.tinypic.com/21djrit.jpg)
+
+The data property is an array that would normally contain the todo items that exist in the database. As you can see, we currently do not have any todo items in the database.
+
+### Adding items to the database
+
 Let's now write a function that adds an item to the database. This will live as a method on the `$scope` object.
 
 - [ ] Create a method on the `$scope` called `createTodo`. This function will be invoked when the user clicks the "submit" button that lives on the `form` element.
@@ -97,6 +115,17 @@ Let's now write a function that adds an item to the database. This will live as 
           }, function(err, todo){...}
 
 The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
+
+- [ ] Create a submit button on the form element:
+  - [ ] Underneath the input element, add a `<button>` element
+
+          <button type="submit" ng-click="createTodo()">Add New</button>
+
+  The Angular directive `ng-click` will invoke the provided function whenever this element is clicked. We will use this to access the recently created `$scope.createTodo` function.
+
+Navigate to your browser and you should now see a button underneath the form. Add an item to the database, and refresh the page. The initial `GET` request to the server should now return a response that contains the newly created todo item:
+
+![](http://i66.tinypic.com/w2ise1.jpg)
 
 
 

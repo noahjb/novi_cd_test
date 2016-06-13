@@ -21,12 +21,21 @@
 
 <body ng-controller='mainController'>
     <div class="container">
+        <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="checkbox" ng-repeat="todo in todos">
+                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                </div>
+            </div>
+        </div>
+
         <div id="todo-form" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <form> 
                     <div class="form-group">
                         <input type="text" class="form-control input-lg text-center" placeholder="learn web dev with angular" ng-model='formData.text'>
                     </div>
+                    <button type="submit" ng-click="createTodo()">Add New</button>
                 </form>
             </div>
         </div>
