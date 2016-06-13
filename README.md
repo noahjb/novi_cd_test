@@ -27,9 +27,10 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 
   `git fetch --all`
 11.  Verify that you have all of the available branches on your virtual machine. Use the command `git branch`
-12.  Update the config file to point to the newly forked & cloned repository: 
+12.  Update the config file to point to the newly forked & cloned repository. Right click on your connection and choose "Config": 
 ![](http://i66.tinypic.com/315bkep.jpg) ![](http://i64.tinypic.com/30sae7k.jpg)
 13.  Checkout the starter branch: `git checkout starter`
+14.  Install dependencies by running `npm install`
 
 ## Course Format
 
