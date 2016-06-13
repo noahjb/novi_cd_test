@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Autodesk MEAN ToDo Application</title>
+    <title>MEAN ToDo Application</title>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
     <style>
@@ -19,8 +19,21 @@
 
 </head>
 
-<body>
-<!-- INSERT VIEW CODE HERE -->
+<body ng-controller='mainController'>
+    <div class="container">
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form> 
+                    <div class="form-group">
+
+                        <input type="text" class="form-control input-lg text-center" placeholder="learn web dev with angular" ng-model='formData.text'>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
