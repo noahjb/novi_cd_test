@@ -88,12 +88,16 @@ Let's now write a function that adds an item to the database. This will live as 
 
   `$http.post(...)` is a shortcut method that is provided on the `$http` service. After we send the `POST` request along with the `formData`, we reset the `formData` to be blank and set the `$scope.todos` to the response data. Remember in the server how we are using Mongoose's `create` method to add another item to the database?
 
-         ToDo.create({
-           // The text comes from the AJAX request sent from Angular.
-           text: request.body.text,
-           complete: false
-         }, function(err, todo){...}
+        app.post('/api/todos', function(request, response){
+          // Use Mongoose's .create() method to create a new item. 
+          ToDo.create({
+            // The text comes from the AJAX request sent from Angular.
+            text: request.body.text,
+            complete: false
+          }, function(err, todo){...}
 
 The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
+
+
 
 
