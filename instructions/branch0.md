@@ -17,7 +17,7 @@ Here is the folder structure as is:
 
 package.json is used to configure the NPM package manager. We can list dependencies and set up commands in this file. 
 
-- [ ] Run the command `npm install`, npm will check this file and install Express and Mongoose. Your terminal should show a file structure that looks something like this: ![](http://i65.tinypic.com/mif60k.jpg)
+- [ ] If you haven't already, run the command `npm install`, npm will check the `package.json` file and install Express and Mongoose. Your terminal should show a file structure that looks something like this: ![](http://i68.tinypic.com/10hr8mq.jpg)
 
 ## Node/Express Configuration
 
