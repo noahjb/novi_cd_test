@@ -5,7 +5,6 @@ var todo = angular.module('todo', []);
 // IT TAKES TWO ARGUMENTS, $scope and $http
 function mainController($scope, $http){
   $scope.formData = {};
-  $scope.todos = [];
 
   // USE $HTTP GET REQUEST TO GATHER ALL TODOS FROM THE DATABASE
   // SEND A GET REQUEST TO '/api/todos'
@@ -37,6 +36,15 @@ function mainController($scope, $http){
 
   // WRITE A FUNCTION ON THE $SCOPE OBJECT THAT WILL DELETE A TODO
   // IT WILL MAKE A DELETE REQUEST TO THE '/api/todos/:todo_id' ENDPOINT
-
+  $scope.deleteTodo = function(todo_id){
+    $http.delete('/api/todos/' + todo_id)
+      .success(function(data){
+        $scope.todos = data;
+        console.log("item", todo_id, "successfully deleted");
+      })
+      .error(function(error){
+        console.log("Error deleting todo_id", todo_id, ": ", error);
+      });
+  };
 
 }

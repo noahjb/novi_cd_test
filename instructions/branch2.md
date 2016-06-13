@@ -67,7 +67,7 @@ On a successful `GET` request to the `/api/todos` route, we'll expect the respon
 - [ ] Within the successCallback, store the response onto the `$scope`. Within the errorCallback, log the error to the console.
     
         function successCallback(response){
-          $scope.todos = response;
+          $scope.todos = response.data;
           console.log("received data from the server:", response);
         }, function errorCallback(response){
           console.log("received an error from the server:", error);
@@ -127,6 +127,42 @@ Navigate to your browser and you should now see a button underneath the form. Ad
 
 ![](http://i66.tinypic.com/w2ise1.jpg)
 
+### Displaying items
 
+Now that we've written code that will add items to the database, we should be able to render something useful onto the page.
 
+- [ ] Add a todo list section to the HTML above the `todo-form` element
+        <div id="todo-list" class="row">
+          <div class="col-sm-4 col-sm-offset-4">
 
+          </div>    
+        </div>
+
+We'll use the [Angular directive `ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) to dynamically generate HTML based on the data behind the scenes. We can iterate over the `todos` object and create an element on the page for each todo item.
+
+- [ ] Add a [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) for every item in todos, using `ng-repeat`
+    
+        <div class="checkbox" ng-repeat="todo in todos">
+          <input type="checkbox"> {{ todo.text }}
+        </div>
+
+Currently, when the user clicks on the checkbox, it will just display a checkmark but won't take any effect on the item itself. We can add a function to our controller to delete the item. 
+
+         <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+
+Now, when we click on the checkbox, it will try to invoke `deleteTodo` and pass it the current todo's `._id` property as an argument. As a reminder, the `_id` property is generated automatically by Mongoose.
+
+- [ ] Add a `deleteTodo` function to the `mainController`:
+
+        $scope.deleteTodo = function(todo_id){
+          $http.delete('/api/todos/' + todo_id)
+            .success(function(data){
+              $scope.todos = data;
+              console.log("item", todo_id, "successfully deleted");
+            })
+            .error(function(error){
+              console.log("Error deleting todo_id", todo_id, ": ", error);
+            });
+        };
+
+Now, clicking on the checkbox should remove the item from the database.
