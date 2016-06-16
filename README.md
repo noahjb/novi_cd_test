@@ -1,44 +1,52 @@
-# Building a MEAN Stack Application
+# Project Structure, Server Setup and Database Setup
 
-This is a course designed to introduce you to the MEAN stack and web development with Javascript. 
+## Folder Structure
 
-MEAN stands for MongoDB, Express, AngularJS, and NodeJS. 
+We're going to keep the folder structure of this application relatively simple. Our Node/Express server code will live in the `server.js` file. 
 
-## Table Of Contents
-* [Setup](#setting-up)
-* [Section 0 Instructions](instructions/branch0.md): Setting up the database
-* [Section 1 Instructions](instructions/branch1.md): Setting up routes
-* [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
-* [Format](#course-format): Explanation of branches and processes
+Here is the folder structure as is:
 
-## Setting Up
-1. Log into your public GitHub account. If you don’t already have one, go to https://github.com to sign up for a new account. 
-2. Fork this repository to your account
-3. Sign up for [CodeAnywhere](www.codeanywhere.com) using your Github account
-4. Create a new container by choosing **File > New Connection.** Make sure to select the pre-configured MEAN Ubuntu 14.04 verstion+ ![](http://i68.tinypic.com/27y3nmv.png)
-5. Copy the repository link from Github (NOTE: make sure you use “Clone with HTTPS”). ![](http://i63.tinypic.com/w8ommr.png)
-6. If it’s not already open in Codeanywhere, open up an SSH Terminal by right clicking on your new container on the left-hand side: ![](http://i68.tinypic.com/33axpog.jpg)
-7. Type in the following command into your SSH Terminal: `git clone [PASTE YOUR LINK HERE]`
-8.  Verify that you now have a node-todo folder in the folder structure, which is located on the left-hand side of the container. You may need to right-click the left-hand side of the container and click refresh: ![](http://i63.tinypic.com/52yzyq.jpg)
-9.  Within the terminal, navigate to the node-todo folder by entering the following command: `cd mean_adsk`
-10.  Run the following command: (Note: you may get an error, don't worry)
+    - public         <!-- holds our front-end Angular files -->
+    ----- main.js    <!-- Angular code -->
+    ----- index.html <!-- main HTML view -->
+    - package.json   <!-- npm configuration file -->
+    - server.js      <!-- Backend Node file -->
+    - instructions   <!-- Step by Step guide to building this application-->
 
-  `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
+## Package.json and Installing Dependencies
 
-  `git fetch --all`
-11.  Verify that you have all of the available branches on your virtual machine. Use the command `git branch`
-12.  Update the config file to point to the newly forked & cloned repository. Right click on your connection and choose "Config": 
-![](http://i66.tinypic.com/315bkep.jpg) ![](http://i64.tinypic.com/30sae7k.jpg)
-13.  Checkout the starter branch: `git checkout starter`
-14.  Install dependencies by running `npm install`
+package.json is used to configure the NPM package manager. We can list dependencies and set up commands in this file. 
 
-## Course Format
+- [ ] If you haven't already, run the command `npm install`, npm will check the `package.json` file and install Express and Mongoose. Your terminal should show a file structure that looks something like this: ![](http://i68.tinypic.com/10hr8mq.jpg)
 
-The Course is split up into 3 sections. Each section has a corresponding branch that contains all of the completed code. So, if you do not complete the setup steps for a section, you can switch to the pre-existing branch. For instance, Branch1 will contain all of the completed code from both Section 0 and Section 1.  
+## Node/Express Configuration
 
-- Starter: This branch is going to be your main branch for development
-- Branch0: Contains completed database connection and model setup
-- Branch1: Contains completed API routes and Angular routes setup
-- Branch2: Contains completed Angular code and HTML view code
+In our `package.json` file, we indicated that our main file is the `server.js` file. Here is where we will configure the entirety of our back-end. 
+* Connect to Mongo Database
+* Create our Mongoose Models
+* Define routes for our API
+* Define routes for our Angular app
 
-You can checkout any branch using the following command: `git checkout [BRANCH NAME]`
+At the top of the file, we're importing the modules that we'll be using to build this application. Then, we have some basic setup to define the port and define use of middleware.
+
+### Setting up the Database
+In this section, we will connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain Javascript.
+
+- [ ] In the `server.js` file, connect to Mongoose:
+- `mongoose.connect('mongodb://localhost/app'); `
+- [ ] Set up a Mongoose Schema and Model to define the structure of the ToDo object in the database
+  - [ ] Create a Mongoose Schema:
+    - Initialize a variable called toDoSchema and set it equal to a `new mongoose.Schema({...})`
+      - Inside of the function call, pass it an object that defines the properties on that model:
+        - `{ text: {type: String, default: ''}, complete: {type: Boolean, default: false} }`
+  - [ ] Create a Mongoose Model:
+    - Initialize a variable called ToDo and set it equal to the following:
+      -  `mongoose.model('ToDo', toDoSchema);`
+      -  The first argument to mongoose.model() is the name of the model, and the second argument is the schema that defines the properties on that model. 
+      - Mongoose automatically creates an `_id` for every instance of the ToDo object in the database
+
+For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](http://mongoosejs.com/docs/models.html)
+
+## Next Section
+
+In the next section, we'll be setting up the back-end routes. [Section 1 Instructions](./branch1.md)
