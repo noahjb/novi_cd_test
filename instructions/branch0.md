@@ -17,7 +17,7 @@ Here is the folder structure as is:
 
 package.json is used to configure the NPM package manager. We can list dependencies and set up commands in this file. 
 
-- [ ] Run the command `npm install`, npm will check this file and install Express and Mongoose. Your terminal should show a file structure that looks something like this: ![](http://i65.tinypic.com/mif60k.jpg)
+- [ ] If you haven't already, run the command `npm install`, npm will check the `package.json` file and install Express and Mongoose. Your terminal should show a file structure that looks something like this: ![](http://i68.tinypic.com/10hr8mq.jpg)
 
 ## Node/Express Configuration
 
@@ -32,9 +32,9 @@ At the top of the file, we're importing the modules that we'll be using to build
 ### Setting up the Database
 In this section, we will connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain Javascript.
 
-- [ ] Connect to Mongoose
+- [ ] In the `server.js` file, connect to Mongoose:
 - `mongoose.connect('mongodb://localhost/app'); `
-- [ ] Set up a Mongoose Model to define the structure of the ToDo object in the database
+- [ ] Set up a Mongoose Schema and Model to define the structure of the ToDo object in the database
   - [ ] Create a Mongoose Schema:
     - Initialize a variable called toDoSchema and set it equal to a `new mongoose.Schema({...})`
       - Inside of the function call, pass it an object that defines the properties on that model:
