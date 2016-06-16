@@ -132,15 +132,15 @@ Navigate to your browser and you should now see a button underneath the form. Ad
 Now that we've written code that will add items to the database, we should be able to render something useful onto the page.
 
 - [ ] Add a todo list section to the HTML above the `todo-form` element
+
         <div id="todo-list" class="row">
           <div class="col-sm-4 col-sm-offset-4">
-
           </div>    
         </div>
 
 We'll use the [Angular directive `ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) to dynamically generate HTML based on the data behind the scenes. We can iterate over the `todos` object and create an element on the page for each todo item.
 
-- [ ] Add a [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) for every item in todos, using `ng-repeat`
+- [ ] Add a [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) for every item in todos, using `ng-repeat`. This works just like a standard `for` loop where we define a keyword (`todo`) to represent each individual value in the collection (`todos`)
     
         <div class="checkbox" ng-repeat="todo in todos">
           <input type="checkbox"> {{ todo.text }}
