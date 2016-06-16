@@ -1,9 +1,11 @@
 # Setting up API Routes and Angular Routes
 
 ## Creating a RESTful API
-We will create routes on the server to let the server know what we need to do whenever we receive an HTTP request for a particular URL. Typically, if a route is prefixed with `/api/` it means it is a private route for use by your application. 
+We will create routes on the server to let the server know what we need to do whenever we receive an HTTP request for a particular URL. A common convention for defining private routes for use by your application is to prefix the routh with `/api/`.
 
-Each route takes a URL path and a function. The function takes two arguments: the Request object (sent through the HTTP request) and the Response object (what the server sends back to the requesting agent). From the request, we can get information about the user, the data the user has input into the front-end, and many other things. The response is an object that we manipulate in the request handler and send back to the requesting agent.
+We're going to be using the Express framework as a way to simplify our server code. Request handler functions built with Express will specify a particular HTTP verb and a particular route. The request handlers take a URL path and a function as arguments. 
+
+The function passed to the request handler takes two arguments: the request object (sent through the HTTP request) and the response object (what the server sends back to the requesting agent). From the request, we can get information about the user, the data the user has input into the front-end, and many other things. The response is an object that we manipulate in the request handler and send back to the requesting agent.
 
 Here are the routes we will build on the server:
 
@@ -17,7 +19,7 @@ Inside each route, we'll use methods provided to us by Mongoose in order to retr
 
 In your `server.js` file, above the `app.listen()`, complete the following:
 
-- [ ] Create a request handler for the `/GET` route for `/api/todos/`
+- [ ] Create a request handler for the `/GET` route for `/api/todos/`. Use the [Mongoose Find](http://mongoosejs.com/docs/queries.html) function to query the database.
 
         app.get('/api/todos', function(request, response){
           // Use Mongoose's .find() method to retrieve all todos from database
@@ -31,7 +33,7 @@ In your `server.js` file, above the `app.listen()`, complete the following:
           });
         });
 
-- [ ] Create a request handler for the `/POST` route for `/api/todos/`
+- [ ] Create a request handler for the `/POST` route for `/api/todos/`. Use [Mongoose Create](http://mongoosejs.com/docs/models.html) function to create a new document and add it to the database.
 
         app.post('/api/todos', function(request, response){
           // Use Mongoose's .create() method to create a new item. 
@@ -44,7 +46,7 @@ In your `server.js` file, above the `app.listen()`, complete the following:
             if (err) { 
               response.send(err); 
             }
-            // Retrieve all Todos after creating another 
+            // Retrieve all Todos after creating another, in order to repopulate the entire list on the page
             ToDo.find(function(err, todos){
               if (err) {
                 response.send(err);
@@ -63,7 +65,7 @@ In your `server.js` file, above the `app.listen()`, complete the following:
             if (err) {
               response.send(err);
             }
-            // Retrieve all Todos after deleting one
+            // Retrieve all Todos after deleting one, in order to repopulate the entire list on the page
             ToDo.find(function(err, todos){
               if (err) {
                 response.send(err);
@@ -81,7 +83,7 @@ Next, we need to set up the route the will be public facing - the route that wil
 |---|---|---|
 | GET  | * | render the static file index.html  |
 
-- [ ] Create a request handler for a `GET` request to `*`, to handle all `GET` requests to otherwise unspecified routes
+- [ ] Create a request handler for a `GET` request to `*`, to handle all `GET` requests to otherwise unspecified routes. 
 
         app.get('*', function(request, response){
           response.sendFile(__dirname + '/public/index.html');
