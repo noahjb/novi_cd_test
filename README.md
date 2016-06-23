@@ -83,7 +83,7 @@ In your config file, set the current working directory to point to your `mean_ad
 
 ![](http://i66.tinypic.com/2ljkivq.jpg)
 
-Remember to save the config file. 
+Remember to save the config file using Command+S or Ctrl+S. 
 
 Done. 
 You've finished creating your cloud development environment. Notice that you installed absolutely nothing locally, and you've accomplished all of those tasks with just a browser. 
