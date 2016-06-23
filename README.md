@@ -12,7 +12,7 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 * [Format](#course-format): Explanation of branches and processes
 
 ## Setting Up Your Cloud Environment
-This workshop assumes you have 1) NO development experience, 2) have NEVER written any code previously, and 3) are willing to learn through PRACTICE. This part of the workshop should take you no more than 30 minutes. Don't be shy if you get stuck. And if you finish early, look to assist others. 
+This workshop assumes you have 1) NO development experience, 2) have NEVER written any code previously, and 3) are willing to learn through PRACTICE. This setting-up part of the workshop should take you no more than 30 minutes. Don't be shy if you get stuck. And if you finish early, look to assist others. 
 
 Let's get started!
 
@@ -38,7 +38,7 @@ Let's get back to it. Back in CodeAnywhere, you may see that you have an **SSH T
 
 ![](http://i68.tinypic.com/33axpog.jpg)
 
-What we need to do now is clone the repo we forked earlier in GitHub to our CodeAnywhere environment. Go back to your open GitHub window and copy the repository link from Github using “**Clone with HTTPS**”. If that doesn't make sense, take a look at the screenshot below or ask someone for help: 
+What we need to do now is to clone the repository we forked earlier in GitHub to our CodeAnywhere environment. Go back to your open GitHub window and copy the repository link from Github using “**Clone with HTTPS**”. If that doesn't make sense, take a look at the screenshot below or ask someone for help: 
 
 ![](http://i64.tinypic.com/szhhd4.jpg) 
 
@@ -60,7 +60,7 @@ We'll then run the following commands (Disregard the nasty error message):
    
    `git fetch --all`
 
-Then, run the following command to verify you have all of the available branches (What is a branch? It's a little long and involved but worth the [read](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is):
+Then, run the following command to verify you have all of the available branches (What is a branch? You can take a quick look [here](https://guides.github.com/activities/hello-world/) - scroll down to Step 2):
  
    `git branch`
 
@@ -105,4 +105,3 @@ The workshop is split into 3 sections. Failure is totally acceptable here and we
 You can checkout any of the solution branches using the following command: 
 
    `git checkout [BRANCH NAME]`
-   Yu's try
