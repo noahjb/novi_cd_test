@@ -69,7 +69,7 @@ What you need to do now is checkout the starter branch:
  
    `git checkout starter`
 
-Then, we need to install dependencies by running the following command (What are dependencies? Good question, but not important for the task at hand. Let's table this one.): 
+Then, we need to install dependencies by running the following command (What are dependencies? Good question. A simple explanation is that sometimes when you install programs, they rely on other programs to work, and these other programs are called dependencies. Further understanding is not necessary for the task at hand. Let's table it.): 
 
    `npm install`
 
