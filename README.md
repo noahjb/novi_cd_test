@@ -60,7 +60,7 @@ We'll then run the following commands (Disregard the nasty error message):
    
    `git fetch --all`
 
-Then, run the following command to verify you have all of the available branches (What is a branch? You can take a quick look [here](https://guides.github.com/activities/hello-world/) - scroll down to Step 2):
+Then, run the following command to verify you have all of the available branches (What is a branch? You can take a quick look [here](https://guides.github.com/activities/hello-world/) - scroll down to Step 2. If you want to learn further, you can refer to [this doc](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is) later):
  
    `git branch`
 
