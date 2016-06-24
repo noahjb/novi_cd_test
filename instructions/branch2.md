@@ -65,7 +65,7 @@ After the HTTP request is made, we use the `.then(...)` method to handle the nex
 
 On a successful `GET` request to the `/api/todos` route, we'll expect the response to contain an object that has all of the todos that exist in the database. We need to store this response object on the `$scope`. We also need to add some basic error handling in case the `GET` request is a failure.
 
-Let's do the following things. Within the successCallback, store the `response.data` onto the `$scope`. Within the errorCallback, log the error to the console.
+Let's do the following things. Within the successCallback, store the `response.data` onto the `$scope`. Within the errorCallback, log the error to the console. (Clue: you see in the above code block there are some comment lines - that's where we are going to add new code from the following code block. )
    
     function successCallback(response){
        $scope.todos = response.data;
@@ -76,7 +76,7 @@ Let's do the following things. Within the successCallback, store the `response.d
 
 ### Status Check
 
-At this point, you should be able to click the RUN button (looks like a play button) on the CodeAnywhere editor. It should open a page that contains a single form element, with your placeholder text.
+At this point, you should be able to click the RUN button (looks like a play button) on the CodeAnywhere editor. It should open a page that contains a single form element, with your placeholder text. (Note: There might be pop-up blocking in your brower. If so, you will need to unblock it.) 
 
 ![](http://i67.tinypic.com/idy5pe.jpg)
 
@@ -92,7 +92,7 @@ The data property is an array that would normally contain the todo items that ex
 
 Let's now write a function that adds an item to the database. This will live as a method on the `$scope` object. Adding the method to the `$scope` object will allow us the ability to call it from within the HTML. 
 
-- [ ] Create a method on the `$scope` called `createTodo`. This function will be invoked when the user clicks the submit button that will live on the `form` element.
+- [ ] We now create a method on the `$scope` called `createTodo`. This function will be invoked when the user clicks the submit button that will live on the `form` element.
 
         $scope.createTodo = function() {
           $http.post('/api/todos', $scope.formData)
@@ -105,7 +105,7 @@ Let's now write a function that adds an item to the database. This will live as 
             });
         };
 
-  `$http.post(...)` is a shortcut method that is provided on the `$http` service. After we send the `POST` request along with the `formData`, we reset the `formData` to be blank and set the `$scope.todos` to the response data. Remember in the server how we are using Mongoose's `create` method to add another item to the database?
+  `$http.post(...)` is a shortcut method that is provided on the `$http` service. After we send the `POST` request along with the `formData`, we reset the `formData` to be blank and set the `$scope.todos` to the response data. Remember in the server how we are using Mongoose's `create` method to add another item to the database? (The following code is already in your 'server.js' file)
 
         app.post('/api/todos', function(request, response){
           // Use Mongoose's .create() method to create a new item. 
@@ -117,10 +117,9 @@ Let's now write a function that adds an item to the database. This will live as 
 
 The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
 
-- [ ] Create a submit button on the form element:
-  - [ ] Underneath the input element, add a `<button>` element
+- [ ] We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
 
-          <button type="submit" ng-click="createTodo()">Add New</button>
+       <button type="submit" ng-click="createTodo()">Add New</button>
 
   The Angular directive `ng-click` will invoke the provided function whenever this element is clicked. We will use this to access the recently created `$scope.createTodo` function.
 
