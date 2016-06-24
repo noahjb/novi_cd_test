@@ -13,19 +13,19 @@ Angular Controllers control the data flow within Angular applications. Angular h
     
           function mainController($scope, $http) {}
 
-  In `index.html`, we've defined the use of the `mainController`
+  In `index.html`, we need to define the use of the `mainController`. Not sure how to do this? You shoule see there is a <body> block in `index.html`, and just add code within the <body> to make it look like this:
 
           <body ng-controller="mainController">
             <div class="container">
             </div>
           </body>
 
-  - [ ] On the controller, define an object to store the form data. It will live on the $scope object. 
+  - [ ] Now we go back to `main.js`. On the controller, define an object to store the form data. It will live on the $scope object. 
 
           $scope.formData = {};
           
 
-  - [ ] In the HTML, let's create a form element that we'll use to enter new values into the todo list. Within the `container` `div`, let's add a simple form element.
+  - [ ] In `index.html`, let's create a form element that we'll use to enter new values into the todo list. Within the `container` `div`, let's add a simple form element. You may need to format the code to make the structure clear.
           
           <div id="todo-form" class="row">
               <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -49,30 +49,30 @@ In the server, we built a request handler `app.get('/api/todos'...` that returns
 
 `$http` is a core Angular service that comes with helper functions that facilitate communication with HTTP servers. `$http` takes a single argument - a configuration object - that is used to generate an HTTP request and it returns a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). A promise is an object that represents an operation that hasn't completed yet, but is expected in the future. Because the HTTP request is Asyncronous, we use a Promise to associate handlers with the eventual success or failure of this HTTP request.
 
-- [ ] Send an HTTP request to the server to gather all of the todos in the database. In `mainController`, make an HTTP GET request:
+To do this, we need to send an HTTP request to the server to gather all of the todos in the database. In `mainController`, let's make an HTTP GET request:
 
-        $http({
-          method: 'GET',
-          url: '/api/todos'
-        }).then(function successCallback(response){
-          // Called asyncronously when the response is available, if no error
-        }, function errorCallback(response){
-          // Called asyncronously if an error occurs or the server returns
-          // a response with an error status
-        });
+    $http({
+      method: 'GET',
+      url: '/api/todos'
+    }).then(function successCallback(response){
+      // Called asyncronously when the response is available, if no error
+    }, function errorCallback(response){
+      // Called asyncronously if an error occurs or the server returns
+      // a response with an error status
+    });
 
 After the HTTP request is made, we use the `.then(...)` method to handle the next steps. It takes a success function and an error function. ONE of these will be invoked based on the status of the HTTP request.
 
 On a successful `GET` request to the `/api/todos` route, we'll expect the response to contain an object that has all of the todos that exist in the database. We need to store this response object on the `$scope`. We also need to add some basic error handling in case the `GET` request is a failure.
 
-- [ ] Within the successCallback, store the `response.data` onto the `$scope`. Within the errorCallback, log the error to the console.
-    
-        function successCallback(response){
-          $scope.todos = response.data;
-          console.log("received data from the server:", response);
-        }, function errorCallback(response){
-          console.log("received an error from the server:", error);
-        });
+Let's do the following things. Within the successCallback, store the `response.data` onto the `$scope`. Within the errorCallback, log the error to the console.
+   
+    function successCallback(response){
+       $scope.todos = response.data;
+       console.log("received data from the server:", response);
+    }, function errorCallback(response){
+      console.log("received an error from the server:", error);
+    });
 
 ### Status Check
 
