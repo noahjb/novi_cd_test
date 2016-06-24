@@ -6,7 +6,7 @@ In this section, we'll simultaneously create the HTML and Angular code. These wo
 
 Angular Controllers control the data flow within Angular applications. Angular has many services that can be injected into controllers to be used within the controller code. So, we can inject only the services that we need. Our controller will use the `$scope` service to store properties and functions that will be available to the HTML. We'll use the `$http` service to make AJAX requests to our server.
 
-- [ ] Create a controller and render it
+- [ ] Now we are going to create a controller and render it. The files we'll be using are both under the **public** folder.
 
   In `main.js`, we've created a function called `mainController`. It will take two arguments, `$scope` and `$http`:
     
