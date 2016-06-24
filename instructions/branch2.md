@@ -121,6 +121,9 @@ The text is coming from the `text` property that is being pulled off of the requ
 
          <button type="submit" ng-click="createTodo()">Add New</button>
 
+  To make sure you put the code in the right place, you can check the following image:
+  ![](http://i63.tinypic.com/9j3scl.jpg)
+  
   The Angular directive `ng-click` will invoke the provided function whenever this element is clicked. We will use this to access the recently created `$scope.createTodo` function.
 
 Navigate to your browser and you should now see a button underneath the form. Add an item to the database, and refresh the page. The initial `GET` request to the server should now return a response that contains the newly created todo item:
@@ -165,4 +168,6 @@ Now, when we click on the checkbox, it will try to invoke `deleteTodo` and pass 
             });
         };
 
-Now, clicking on the checkbox should remove the item from the database.
+Now, when you click on the checkbox, the item from the database shoule be removed.
+
+Congratulations! You've made the little web application!
