@@ -119,7 +119,7 @@ The text is coming from the `text` property that is being pulled off of the requ
 
 - [ ] We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
 
-       <button type="submit" ng-click="createTodo()">Add New</button>
+         <button type="submit" ng-click="createTodo()">Add New</button>
 
   The Angular directive `ng-click` will invoke the provided function whenever this element is clicked. We will use this to access the recently created `$scope.createTodo` function.
 
