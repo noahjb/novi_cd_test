@@ -36,10 +36,12 @@ In this section, we will connect to the database and set up a model. A model is 
 - `mongoose.connect('mongodb://localhost/app'); `
 - [ ] Set up a Mongoose Schema and Model to define the structure of the ToDo object in the database
   - [ ] Define Mongoose Schema:
+  -     Below the line of "// DEFINE MONGOOSE SCHEMA", paste the following code:
         - `var toDoSchema = new mongoose.Schema({text: {type: String, default: ''}, complete: {type: Boolean, default: false} });`
     - In the above code, we initialize a variable called toDoSchema and set it equal to a `new mongoose.Schema({...})`
     - Inside of the function call, we pass it an object that defines the properties on that model: `{ text: {type: String, default: ''}, complete: {type: Boolean, default: false} }`
   - [ ] Create a Mongoose Model:
+  -     Below the line of "// DEFINE MONGOOSE MODEL", paste the following code:
        - `var ToDo = mongoose.model('ToDo', toDoSchema);`
     - In the above code, we initialize a variable called ToDo and set it equal to `mongoose.model('ToDo', toDoSchema);`
     -  The first argument to mongoose.model() is the name of the model, and the second argument is the schema that defines the properties on that model. 
