@@ -53,7 +53,7 @@ In this section, we will connect to the database and set up a model. A model is 
 
 For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](http://mongoosejs.com/docs/models.html)
 
-Don't forget to save this file.
+Don't forget to save this file before moving on to the next section.
 
 ## Next Section
 
