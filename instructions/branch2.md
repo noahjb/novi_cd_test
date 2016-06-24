@@ -20,12 +20,12 @@ Angular Controllers control the data flow within Angular applications. Angular h
             </div>
           </body>
 
-  - [ ] Now we go back to `main.js`. On the controller, define an object to store the form data. It will live on the $scope object. 
+  Now we go back to `main.js`. On the controller, define an object to store the form data. It will live on the $scope object. 
 
           $scope.formData = {};
           
 
-  - [ ] In `index.html`, let's create a form element that we'll use to enter new values into the todo list. Within the `container` `div`, let's add a simple form element. You may need to format the code to make the structure clear.
+  In `index.html`, let's create a form element that we'll use to enter new values into the todo list. Within the `container` `div`, let's add a simple form element. You may need to format the code to make the structure clear.
           
           <div id="todo-form" class="row">
               <div class="col-sm-8 col-sm-offset-2 text-center">
