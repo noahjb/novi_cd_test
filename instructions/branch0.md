@@ -33,7 +33,9 @@ At the top of the file, we're importing the modules that we'll be using to build
 In this section, we will connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain Javascript.
 
 - [ ] In the `server.js` file (make sure you click on the one under the **mean_adsk** folder), connect to Mongoose (Not sure how to do this? Just copy the following code under the comment "connect to mongo/mongoose". Same for the steps below.):
+
      `mongoose.connect('mongodb://localhost/app'); `
+
 - [ ] Set up a Mongoose Schema and Model to define the structure of the ToDo object in the database
   - [ ] Define a Mongoose Schema:
   
