@@ -32,21 +32,22 @@ At the top of the file, we're importing the modules that we'll be using to build
 ### Setting up the Database
 In this section, we will connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain Javascript.
 
-- [ ] In the `server.js` file (make sure you click on the one under the **mean_adsk** folder), connect to Mongoose:
--   Below the line of "// CONNECT TO MONGO/MONGOOSE", paste the following code:
-    - `mongoose.connect('mongodb://localhost/app'); `
+- [ ] In the `server.js` file (make sure you click on the one under the **mean_adsk** folder), connect to Mongoose (Not sure how to do this? Just copy the following code under the comment "connect to mongo/mongoose". Same for the steps below.):
+     `mongoose.connect('mongodb://localhost/app'); `
 - [ ] Set up a Mongoose Schema and Model to define the structure of the ToDo object in the database
-  - [ ] Define Mongoose Schema:
-  -     Below the line of "// DEFINE MONGOOSE SCHEMA", paste the following code:
-        - `var toDoSchema = new mongoose.Schema({text: {type: String, default: ''}, complete: {type: Boolean, default: false} });`
+  - [ ] Define a Mongoose Schema:
+  
+     `var toDoSchema = new mongoose.Schema({text: {type: String, default: ''}, complete: {type: Boolean, default: false} });`
+  
     - In the above code, we initialize a variable called toDoSchema and set it equal to a `new mongoose.Schema({...})`
     - Inside of the function call, we pass it an object that defines the properties on that model: `{ text: {type: String, default: ''}, complete: {type: Boolean, default: false} }`
   - [ ] Create a Mongoose Model:
-  -     Below the line of "// DEFINE MONGOOSE MODEL", paste the following code:
-       - `var ToDo = mongoose.model('ToDo', toDoSchema);`
-    - In the above code, we initialize a variable called ToDo and set it equal to `mongoose.model('ToDo', toDoSchema);`
-    -  The first argument to mongoose.model() is the name of the model, and the second argument is the schema that defines the properties on that model. 
-    - Mongoose automatically creates an `_id` for every instance of the ToDo object in the database
+ 
+     `var ToDo = mongoose.model('ToDo', toDoSchema);`
+  
+    - In the above code, we initialize a variable called ToDo and set it equal to `mongoose.model('ToDo', toDoSchema)`;
+    - The first argument to mongoose.model() is the name of the model, and the second argument is the schema that defines the properties on that model. 
+    - Mongoose automatically creates an `_id` for every instance of the ToDo object in the database.
 
 For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](http://mongoosejs.com/docs/models.html)
 
