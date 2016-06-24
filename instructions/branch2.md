@@ -105,7 +105,7 @@ Let's now write a function that adds an item to the database. This will live as 
             });
         };
 
-  `$http.post(...)` is a shortcut method that is provided on the `$http` service. After we send the `POST` request along with the `formData`, we reset the `formData` to be blank and set the `$scope.todos` to the response data. Remember in the server how we are using Mongoose's `create` method to add another item to the database? (The following code is already in your 'server.js' file)
+  `$http.post(...)` is a shortcut method that is provided on the `$http` service. After we send the `POST` request along with the `formData`, we reset the `formData` to be blank and set the `$scope.todos` to the response data. Remember in the server how we are using Mongoose's `create` method to add another item to the database? (The following code is already in your `server.js` file)
 
         app.post('/api/todos', function(request, response){
           // Use Mongoose's .create() method to create a new item. 
