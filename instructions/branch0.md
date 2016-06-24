@@ -34,7 +34,7 @@ In this section, we will connect to the database and set up a model. A model is 
 
 - [ ] In the `server.js` file (make sure you click on the one under the **mean_adsk** folder), connect to Mongoose:
 -   Below the line of "// CONNECT TO MONGO/MONGOOSE", paste the following code:
--   `mongoose.connect('mongodb://localhost/app'); `
+    - `mongoose.connect('mongodb://localhost/app'); `
 - [ ] Set up a Mongoose Schema and Model to define the structure of the ToDo object in the database
   - [ ] Define Mongoose Schema:
   -     Below the line of "// DEFINE MONGOOSE SCHEMA", paste the following code:
