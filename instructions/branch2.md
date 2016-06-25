@@ -253,7 +253,7 @@ We need to add the `deleteTodo` function to the `mainController`:
 
 ```javascript
 $scope.deleteTodo = function(todo_id){
-   	$http.delete('/api/todos/' + todo_id)
+	$http.delete('/api/todos/' + todo_id)
     	.success(function(data){
     		$scope.todos = data;
            	console.log("item", todo_id, "successfully deleted");
@@ -264,6 +264,6 @@ $scope.deleteTodo = function(todo_id){
    	}; 
 ```
 
-Now, when you click on the checkbox, the item from the database shoule be removed.
+Now, when you click on the checkbox, the item should be deleted from the database, and the list of todos should be refreshed.
 
-Congratulations! You've made your first MEAN web application!
+Congratulations! You've built your very first MEAN web application!
