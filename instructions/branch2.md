@@ -1,4 +1,4 @@
-# Creating an Angular Front-End (aka user interface)
+# Creating an Angular Front-End (User interface)
 
 In this section, we'll simultaneously create the HTML and Angular code. These work together to render the application.
 
@@ -6,7 +6,7 @@ But before we get into it, why don't we test our app? Since we used a cloud deve
 
 Take a moment and figure out how to do that. Found it? What's happening? 
 
-## Defining a Controller
+###Define a controller
 
 Angular controllers control the data flow within Angular applications. Angular has many services that can be [injected](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+dependency+injection) into controllers to be used within the controller code. Our controller will use the `$scope` service to store properties and functions that will be available to the HTML. We'll use the `$http` service to make AJAX requests to our server.
 
@@ -23,6 +23,8 @@ function mainController($scope, $http){
 
 }
 ```
+
+###Use controller in HTML
 Open `index.html` and define the use of the `mainController`. Find the `<body>` block and add the following code within it:
 
 ```html
@@ -33,6 +35,7 @@ Open `index.html` and define the use of the `mainController`. Find the `<body>` 
 </body>
 ```
 
+###Store form data
 Back in `main.js`, in the controller, go ahead and define an object to store form data. It will live on the $scope object:
 
 ```javascript
@@ -42,6 +45,7 @@ function mainController($scope, $http){
 }
 ```
 
+###Define an HTML form
 Now back in `index.html` create a form within the `container` `div`...
 
 ```html
@@ -138,6 +142,7 @@ Go ahead and test the code. You should see a page that contains a single form el
 
 ![](http://i67.tinypic.com/idy5pe.jpg)
 
+###Debug with Chrome Developer tools
 [Open up Chrome Developer Tools](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chrome%20developer%20tools) and take a look at the Console tab. 
 
 We can see that upon the initial page load, we sent a `GET` request to our own server and then responded with an empty object.
@@ -146,7 +151,7 @@ We can see that upon the initial page load, we sent a `GET` request to our own s
 
 The data property is an array that would normally contain the todo items that exist in the database. As you can see, we currently do not have any todo items in the database.
 
-### Adding items to the database
+### Add items to the database
 
 Let's write a function that adds an item to the database. This will live as a method on the `$scope` object. Adding the method to the `$scope` object will allow us the ability to call it from within the HTML. 
 
@@ -183,6 +188,7 @@ app.post('/api/todos', function(request, response){
 
 The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
 
+###Add a directive
 We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
 
 ```html
@@ -214,11 +220,11 @@ Go ahead and test your code. You should now see a button underneath the form. Ad
 
 ![](http://i66.tinypic.com/w2ise1.jpg)
 
-### Displaying items
+### Display items
 
 Now that we've written code that will add items to the database, we should be able to render something useful onto the page.
 
-Add a todo list section to the HTML **above** the `todo-form` element
+Add a todo list section to the HTML **above** the `todo-form` element:
 
 ```html
 <div id="todo-list" class="row">
@@ -227,29 +233,49 @@ Add a todo list section to the HTML **above** the `todo-form` element
    	</div>    
 </div>
 ```
+
 We'll use the Angular directive [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) to dynamically generate HTML based on the data behind the scenes. We can iterate over the `todos` object and create an element on the page for each todo item.
 
-Add a [checkbox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) element for every item in todos, using `ng-repeat`. This works just like a standard for-loop where we define a keyword (`todo`) to represent each individual value in the collection (`todos`). The following code should be added within the `todo-list`. 
-
 ```html
-<div class="checkbox" ng-repeat="todo in todos">
-  	<input type="checkbox"> {{ todo.text }}
+<div id="todo-list" class="row">
+  	<div class="col-sm-4 col-sm-offset-4">
+		<div class="checkbox" ng-repeat="todo in todos">
+
+		</div>   	
+   	</div>    
 </div>
 ```
 
-Test your code.
-
-When the user clicks on the checkbox, it will just display a checkmark but won't take any effect on the item itself. We can add a function to our controller to delete the item:
+###Delete items
+Add a [checkbox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) element for every item in todos, using `ng-repeat`. This works just like a standard for-loop where we define a keyword (`todo`) to represent each individual value in the collection (`todos`). The following code should be added within the `todo-list`:
 
 ```html
-<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+<div id="todo-list" class="row">
+  	<div class="col-sm-4 col-sm-offset-4">
+		<div class="checkbox" ng-repeat="todo in todos">
+			<input type="checkbox"> {{ todo.text }}
+		</div>   	
+   	</div>    
+</div>
 ```
 
-What we'd expect to happen is that when we click on the checkbox, it will try to invoke `deleteTodo` and pass the current todo's `._id` property as an argument. As a reminder, the `_id` property is generated automatically by Mongoose.
+What we want is that when the user clicks on the checkbox, it will delete the item from the database:
+
+```html
+<div id="todo-list" class="row">
+  	<div class="col-sm-4 col-sm-offset-4">
+		<div class="checkbox" ng-repeat="todo in todos">
+			<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+		</div>   	
+   	</div>    
+</div>
+```
+
+When we click on the checkbox, it will try to invoke `deleteTodo` and pass the current todo's `todo._id` property as an argument. As a reminder, the `_id` property is generated automatically by Mongoose.
 
 Test again. What's going on?
 
-We need to add the `deleteTodo` function to the `mainController`:
+We need to define the `deleteTodo` function in `mainController`:
 
 ```javascript
 $scope.deleteTodo = function(todo_id){
@@ -264,7 +290,7 @@ $scope.deleteTodo = function(todo_id){
    	}; 
 ```
 
-Now, when you click on the checkbox, the item should be deleted from the database, and the list of todos should be refreshed.
+Now, when you click on the checkbox, the item should be deleted from the database, and the list of todos should be refreshed automatically.
 
 Congratulations! You've built your very first MEAN web application!
 
