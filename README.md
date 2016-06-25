@@ -4,7 +4,7 @@ Hello!
 
 This workshop is designed to introduce you to the [MEAN stack](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+mean+stack). It assumes you're starting at close to absolute zero: no development experience, never written any JavaScript code previously, and coming in with just a willingness to learn through practice. 
 
-The workshop is 1/4 lecture and 3/4 hands-on, with the first 60 minutes dedicated to conceptual coverage of HTML, JavaScript, MVC, and MEAN. The following 180 minutes is dedicated to building your first MEAN web application.
+The workshop is 1/4 lecture and 3/4 hands-on, with the first 60 minutes dedicated to conceptual coverage of HTML, JavaScript, MVC, and MEAN. The following 180 minutes is dedicated to building your first MEAN web application and deploying it to the cloud.
 
 Good luck!
 
