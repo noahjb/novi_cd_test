@@ -33,7 +33,7 @@ In `package.json`, we indicated that our main file is `server.js`. This is where
 * Define routes for our API ([A what now?](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what%20is%20an%20api))
 * Define routes for our Angular app
 
-At the top of `server.js`, we import the modules we'll be using to build this application:
+At the top of `server.js`, you should see the code that imports the modules we'll be using to build our application:
 
 ```javascript
 // Define variables to hold all of the imported modules.
@@ -44,7 +44,7 @@ var morgan = require('morgan'); // Middleware that logs HTTP requests to the con
 var methodOverride = require('method-override');
 ``` 
 
-Then, we have some basic setup to define the port and define use of middleware:
+You'll also see that we have some code that defines the port and defines use of middleware:
 
 ```javascript
 var port = process.env.PORT || 8080; // Defining the port that we're going to be using
@@ -55,7 +55,7 @@ app.use(morgan('dev')); // Logs every HTTP request to the console
 app.use(bodyParser.json()); // Parses app
 ```
 
-At this point it's not super important that you understand all the details of the code. Can you see some patterns around the use of the function `require(...)` and `app.use(...)`?
+It's not super important that you understand all the details. But can you see some patterns around the use of the function `require(...)` and `app.use(...)`?
 
 ### Setting up the Database
 In this section, we want to connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain JavaScript.
@@ -66,6 +66,7 @@ In `server.js`, connect to Mongoose (Not sure how to do this? Copy/paste or type
 mongoose.connect('mongodb://localhost/app');
 ```
 
+###Define schema
 We need to define the variable `toDoSchema` that will be used to define the Mongoose schema (structure) of the ToDo object in the database:
 
 ```javascript
@@ -110,6 +111,7 @@ var toDoSchema = new mongoose.Schema({
 
 We haven't covered objects or for that matter properties, but see if you can identify the two properties, and their `types`.
 
+###Define model
 Now let's Create a Mongoose model called `ToDo`:
 
 ```javascript
