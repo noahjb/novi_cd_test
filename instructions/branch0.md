@@ -122,7 +122,7 @@ Here, we initialized a variable called `ToDo` and set it equal to `mongoose.mode
 
 Now is a good time to save `server.js`.
 
-For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](http://mongoosejs.com/docs/models.html)
+For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications#defining-a-model)
 
 ## Next Section
 
