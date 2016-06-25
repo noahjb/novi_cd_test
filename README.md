@@ -12,64 +12,65 @@ MEAN stands for MongoDB, Express, AngularJS, and NodeJS.
 * [Format](#course-format): Explanation of branches and processes
 
 ## Setting Up Your Cloud Environment
-This workshop assumes you have 1) NO development experience, 2) have NEVER written any code previously, and 3) are willing to learn through PRACTICE. This setting-up part of the workshop should take you no more than 30 minutes. Don't be shy if you get stuck. And if you finish early, look to assist others. 
+This workshop assumes your starting at close to absolute zero: no development experience, never written any code previously, and coming in with just a willingness to learn through practice. Setting up your cloud environment should take no more than 30 minutes. If you're grinding on something for more than 3 mintues, ask for help. If you finish early, look to help. 
 
 Let's get started!
 
-First off, you'll need a GitHub account ([What is GitHub?](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+github)) If you don’t have one, go to https://github.com and sign up for your account. 
-
-Once you're logged in, you'll need to fork the following repository to your account: 
+You should have received a Welcome email from the workshop facilitator, inviting you to this repo. Go ahead and fork it to your account: 
 
 ![](http://i68.tinypic.com/264rgao.jpg) 
 
-Keep this window on GitHub open as we'll be using this tool shortly.
+Keep this window on GitHub open as we'll come back to it shortly.
 
-Now let's create our CodeAnywhere cloud environment ([What is CodeAnywhere?](https://codeanywhere.com/)) Start by signing up for a [CodeAnywhere](www.codeanywhere.com) account, and use your GitHub account and do it in one click. 
+Now we'll create our [CodeAnywhere cloud environment](https://codeanywhere.com/)). Sign up for a [CodeAnywhere](www.codeanywhere.com) account, and if use your GitHub account, you can do it in one click. 
 
-Once you're logged in, you'll see a pretty empty interface. To start building our app, we'll need to create a new container. Go to **File > New Connection > Container** , and then scroll down to select **MEAN Ubuntu 14.04 version**. You'll need to name the container to create it. 
+Once you're logged into CodeAnywhere, you'll see that the environment is pretty empty. To start building out our app, we'll need to create a new container. 
+
+Go to **File > New Connection > Container** , and then scroll down to select **MEAN Ubuntu 14.04 version**. Make sure to name the container before creating it. 
 
 ![](http://i68.tinypic.com/27y3nmv.png) 
 
-GitHub account- check. 
-CodeAnywhere MEAN container- check. 
-But wait- [what is MEAN again?](http://learn.mean.io/) You should know that ADSK engineers are primary contributors to the https://mean.io project. Check out their Slack channel: https://autodesk.slack.com/messages/gamedev-website/details/.
+By now, you've forked the repo and created your CodeAnywhere environment. But wait- [what is MEAN again?](http://learn.mean.io/). Our own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack channel at https://autodesk.slack.com/messages/gamedev-website/details/.
 
-Let's get back to it. Back in CodeAnywhere, you may see that you have an **SSH Terminal** open. If not, open up one by right-clicking on your new container: 
+In CodeAnywhere, open an **SSH Terminal** by right-clicking on your new container: 
 
 ![](http://i68.tinypic.com/33axpog.jpg)
 
-What we need to do now is to clone the repository we forked earlier in GitHub to our CodeAnywhere environment. Go back to your open GitHub window and copy the repository link from Github using “**Clone with HTTPS**”. If that doesn't make sense, take a look at the screenshot below or ask someone for help: 
+We're going to [clone](https://help.github.com/articles/cloning-a-repository/) the repository we forked earlier to our CodeAnywhere cloud environment. Go to your open GitHub window and copy the repository link using “**Clone with HTTPS**”: 
 
 ![](http://i64.tinypic.com/szhhd4.jpg) 
 
-Once you've copied the link, go back to CodeAnywhere and in the SSH terminal, type in the following command (The SSH terminal doesn't allow keyboard pasting, so you'll need to use the browser's right-click Paste function): 
+Once you've copied the link, go back to the SSH terminal in CodeAnywhere and type in the following command (The SSH terminal doesn't allow keyboard pasting (Ctrl+v), so you'll need to use the browser's right-click Paste function): 
  
    `git clone [PASTE YOUR LINK HERE]`
 
-You should now see a **mean_adsk** folder in the folder panel on the left-hand side of the CodeAnywhere environment. If you don't see it, right-click the container and **Refresh**. 
+Do you see a **mean_adsk** folder on the left-hand side of the CodeAnywhere environment? No? Right-click the container and **Refresh**. 
 
 ![](http://i63.tinypic.com/52yzyq.jpg)
 
-Staying in the SSH terminal, we want to navigate to the mean_adsk folder with the following command: 
+We also want to navigate to the mean_adsk folder using the following command: 
 
   `cd mean_adsk`
 
-We'll then run the following commands (Disregard the nasty error message):
+We'll also need to run the following two commands, line by line (Disregard the nasty error message):
  
    `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
    
    `git fetch --all`
 
-Then, run the following command to verify you have all of the available branches (What is a branch? You can take a quick look [here](https://guides.github.com/activities/hello-world/) - scroll down to Step 2. If you want to learn further, you can refer to [this doc](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is) later):
+What just happened? [What's with all these commands?](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+
+Next, run the following command to verify you have all of the available [branches](https://guides.github.com/activities/hello-world/) If you want to learn more about branches, go [here](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is):
  
    `git branch`
 
-Almost done. 
-What you need to do now is checkout the starter branch:
+At this point, it should be around 15 minutes into the workshop. If it's more like 30 minutes, check in with the facilitator.
+
+Checkout the starter branch:
  
    `git checkout starter`
 
-Then, we need to install dependencies by running the following command (What are dependencies? Good question. A simple explanation is that sometimes when you install programs, they rely on other programs to work, and these other programs are called dependencies. Further understanding is not necessary for the task at hand. Let's table it.): 
+We need to install dependencies by running the following command (What are dependencies? Good question. A simple explanation is that sometimes when you install programs, they rely on other programs to work, and these other programs are called dependencies. Further understanding is not necessary for the task at hand. Let's table it.): 
 
    `npm install`
 
@@ -77,16 +78,18 @@ Now you need to open your connection's config file by right-clicking on your con
 
 ![](http://i66.tinypic.com/315bkep.jpg) 
 
+Almost done.
 In your config file, set the current working directory to point to your `mean_adsk` directory:  
 
    `"cwd": "~/workspace/mean_adsk"` 
 
 ![](http://i66.tinypic.com/2ljkivq.jpg)
 
-Remember to save the config file using Command+S or Ctrl+S. 
+Remember to save often when you're editing files. 
 
-Done. 
-You've finished creating your cloud development environment. Notice that you installed absolutely nothing locally, and you've accomplished all of those tasks with just a browser. 
+That's it.
+
+You've finished creating and configuring your first cloud development environment. You installed absolutely nothing locally, and you've accomplished all of those tasks just using Chrome. 
 
 Welcome to the **new** normal.
 
