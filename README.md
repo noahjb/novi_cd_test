@@ -16,7 +16,7 @@ This workshop assumes your starting at close to absolute zero: no development ex
 
 Let's get started!
 
-You should have received a Welcome email from the workshop facilitator, inviting you to this repo. Go ahead and fork it to your account: 
+[Fork](https://help.github.com/articles/fork-a-repo/) the **mean_adsk** repo you've been invited to: 
 
 ![](http://i68.tinypic.com/264rgao.jpg) 
 
