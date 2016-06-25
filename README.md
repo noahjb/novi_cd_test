@@ -30,7 +30,7 @@ Go to **File > New Connection > Container** , and then scroll down to select **M
 
 ![](http://i68.tinypic.com/27y3nmv.png) 
 
-By now, you've forked the repo and created your CodeAnywhere environment. But wait- [what is MEAN again?](http://learn.mean.io/). Our own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack channel at https://autodesk.slack.com/messages/gamedev-website/details/.
+By now, you've forked the repo and created your CodeAnywhere environment. But wait- [what is MEAN again?](http://learn.mean.io/). Our own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack [channel](https://autodesk.slack.com/messages/gamedev-website/details/).
 
 In CodeAnywhere, open an **SSH Terminal** by right-clicking on your new container: 
 
