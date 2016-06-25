@@ -25,7 +25,7 @@ function mainController($scope, $http){
 ```
 
 ###Use controller in HTML
-Open `index.html` and define the use of the `mainController`. Find the `<body>` block and add the following code within it:
+Open `index.html` and define the use of the `mainController`. Find `<body>` element and add the following code:
 
 ```html
 <body ng-controller="mainController">
@@ -36,7 +36,7 @@ Open `index.html` and define the use of the `mainController`. Find the `<body>` 
 ```
 
 ###Store form data
-Back in `main.js`, in the controller, go ahead and define an object to store form data. It will live on the $scope object:
+Back in `main.js`, in the controller, go ahead and define an object to store form data. It will live on the `$scope` object:
 
 ```javascript
 function mainController($scope, $http){
@@ -45,8 +45,8 @@ function mainController($scope, $http){
 }
 ```
 
-###Define an HTML form
-Now back in `index.html` create a form within the `container` `div`...
+###Define a form
+Now back in `index.html` create a form within the `<div class="container">` element:
 
 ```html
 <body ng-controller="mainController">
@@ -152,7 +152,6 @@ We can see that upon the initial page load, we sent a `GET` request to our own s
 The data property is an array that would normally contain the todo items that exist in the database. As you can see, we currently do not have any todo items in the database.
 
 ### Add items to the database
-
 Let's write a function that adds an item to the database. This will live as a method on the `$scope` object. Adding the method to the `$scope` object will allow us the ability to call it from within the HTML. 
 
 We now create a method on the `$scope` called `createTodo`. `createTodo` will be invoked when the user clicks the submit button on the `form` element:
@@ -188,7 +187,7 @@ app.post('/api/todos', function(request, response){
 
 The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
 
-###Add a directive
+###Add items to the database
 We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
 
 ```html
