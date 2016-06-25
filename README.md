@@ -51,6 +51,8 @@ Once you've copied the link, go back to the SSH terminal in CodeAnywhere and typ
  
    `git clone [PASTE YOUR LINK HERE]`
 
+[You may get challenged here to enter your GitHub username and password.]
+
 Do you see a **mean_adsk** folder on the left-hand side of the CodeAnywhere environment? No? Right-click the container and **Refresh**. 
 
 ![](http://i63.tinypic.com/52yzyq.jpg)
@@ -64,6 +66,8 @@ We'll also need to run the following two commands, one line at a time (Disregard
    `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
    
    `git fetch --all`
+
+[You may get challenged for your GitHub credentials after the `git fetch --all` command.]
 
 What just happened? [What's with all these commands?](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
 
