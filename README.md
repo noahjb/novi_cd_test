@@ -2,7 +2,7 @@
 
 Hello!
 
-This workshop is designed to introduce you to the [MEAN stack](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+mean+stack). It assumes your starting at close to absolute zero: no development experience, never written any JavaScript code previously, and coming in with just a willingness to learn through practice. 
+This workshop is designed to introduce you to the [MEAN stack](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+mean+stack). It assumes you're starting at close to absolute zero: no development experience, never written any JavaScript code previously, and coming in with just a willingness to learn through practice. 
 
 ## Table Of Contents
 * [Setup](#setting-up-your-cloud-environment)
