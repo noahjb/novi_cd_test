@@ -38,7 +38,7 @@ app.get('/api/todos', function(request, response){
 });
 ```
 
-Take a minute to "talk" through this bit of code. Imagine you had to explain what it does to a five year old child. What do you think is the result of the query? 
+Take a minute to "talk" through this bit of code. Imagine you had to explain what it does to a five year old child. What do you think this line of code does `response.json(todos);`? 
 
 ###Define `/POST` route
 Next, we create a request handler for the `/POST` route for `/api/todos/`. Here we're using the [Mongoose Create](http://mongoosejs.com/docs/models.html) function to create a new document and add it to the database.
