@@ -76,7 +76,7 @@ Next, run the following command to verify you have all of the available [branche
  
    `git branch`
 
-At this point, it should be around 15 minutes into the workshop. If it's more like 30 minutes, check in with the facilitator.
+At this point, it should be around 15 minutes into the build part of the workshop. If more than 30 minutes has transpired, check in with the facilitator.
 
 Checkout the starter branch:
  
