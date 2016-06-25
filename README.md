@@ -30,13 +30,13 @@ Keep this window on GitHub open as we'll come back to it shortly.
 ###Create the MEAN container
 Now we'll create our [CodeAnywhere cloud environment](https://codeanywhere.com/). Sign up for a [CodeAnywhere account](https://codeanywhere.com), and if use your GitHub account, you can do it in one click. 
 
-Once you're logged into CodeAnywhere, you'll see that the environment is pretty empty. To start building out our app, we'll need to create a new container. 
-
-Go to **File > New Connection > Container** , and then scroll down to select **MEAN Ubuntu 14.04 version**. Make sure to name the container before creating it. 
+Scroll down and select the **MEAN Ubuntu 14.04 version** container. Make sure to name the container before creating it. 
 
 ![](http://i68.tinypic.com/27y3nmv.png) 
 
-By now, you've forked the repo and created your CodeAnywhere environment. But wait- [what is MEAN again?](http://learn.mean.io/). Our own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack [channel](https://autodesk.slack.com/messages/gamedev-website/details/).
+[Didn't see that screen? Try this optional step: Go to **File > New Connection > Container** , and then scroll down and select **MEAN Ubuntu 14.04 version**. Make sure to name the container.]
+
+Did you know that our very own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack [channel](https://autodesk.slack.com/messages/gamedev-website/details/) and join the conversation.
 
 ###Clone the repo
 In CodeAnywhere, open an **SSH Terminal** by right-clicking on your new container: 
