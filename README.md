@@ -36,7 +36,7 @@ Scroll down and select the **MEAN Ubuntu 14.04 version** container. Make sure to
 
 [Didn't see that screen? Try this optional step: Go to **File > New Connection > Container** , and then scroll down and select **MEAN Ubuntu 14.04 version**. Make sure to name the container.]
 
-Did you know that our very own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack [channel](https://autodesk.slack.com/messages/gamedev-website/details/) and join the conversation.
+Did you know that our very own ADSK engineers are primary contributors to the [mean.io](http://mean.io/#!/) project. Check out their Slack [channel](https://autodesk.slack.com/messages/gamedev-website/details/) and join the conversation.
 
 ###Clone the repo
 In CodeAnywhere, open an **SSH Terminal** by right-clicking on your new container: 
