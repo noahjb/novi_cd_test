@@ -1,12 +1,12 @@
 # Creating an Angular Front-End (User interface)
-
-In this section, we'll simultaneously create the HTML and Angular code. These work together to render the application.
+You have until 3PM to complete this part of the workshop.
 
 But before we get into it, why don't we test our app? Since we used a cloud development environment like Codeanywhere, one of the benefits is your code is already "in the cloud" and the amount of work to deploy it "to the cloud" is minimal. In fact, since we started off with a preconfigured MEAN container, we're actually one click away from "running" our code. 
 
-Take a moment and figure out how to do that. Found it? What's happening? 
+Take a moment and figure out how to do that. Found it? What happened? 
 
 ###Define a controller
+In this section, we'll simultaneously create the HTML and Angular code. These work together to render the application.
 
 Angular controllers control the data flow within Angular applications. Angular has many services that can be [injected](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+dependency+injection) into controllers to be used within the controller code. Our controller will use the `$scope` service to store properties and functions that will be available to the HTML. We'll use the `$http` service to make AJAX requests to our server.
 
