@@ -17,6 +17,7 @@ Here are the routes we will build on the server:
 
 Inside each route, we'll use methods provided to us by Mongoose in order to retrieve and manipulate data within the Mongo Database.
 
+###Define `/GET` route
 Open `server.js` as we're going to define our routes there.
 
 We'll first create a request handler for the `/GET` route for `/api/todos/`. Here we're using the [Mongoose Find](http://mongoosejs.com/docs/queries.html) function to query the database:
@@ -38,6 +39,7 @@ app.get('/api/todos', function(request, response){
 
 Take a minute to "talk" through this bit of code. Imagine you had to explain what it does to a five year old child. What do you think is the result of the query? 
 
+###Define `/POST` route
 Next, we create a request handler for the `/POST` route for `/api/todos/`. Here we're using the [Mongoose Create](http://mongoosejs.com/docs/models.html) function to create a new document and add it to the database.
 
 ```javascript
@@ -64,9 +66,10 @@ app.post('/api/todos', function(request, response){
 });
  ```
  
- Did you notice the two parameters `request` and `response`? Why do you think they're important?
- 
- The last request handler we create is for the `/DELETE` route for `/api/todos/:todo_id`
+Did you notice the two parameters `request` and `response`? Why do you think they're important?
+
+###Define `/DELETE` route
+The last request handler we create is for the `/DELETE` route for `/api/todos/:todo_id`
 
 ```javascript
 app.delete('/api/todos/:todo_id', function(request, response){
@@ -86,7 +89,7 @@ app.delete('/api/todos/:todo_id', function(request, response){
     });
 });
 ```
-## Setting up the Public Routes (Serving up Static Files)
+###Define public routes (Serving up static files)
 
 Next, we need to set up the route that will be public facing - the route that will return the static HTML file to the client. This HTML file will render the ToDo view.
 
