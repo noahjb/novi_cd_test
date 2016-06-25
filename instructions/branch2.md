@@ -76,7 +76,7 @@ Let's do the following things. Within the successCallback, store the `response.d
 
 ### Status Check
 
-At this point, you should be able to click the RUN button (looks like a play button) on the CodeAnywhere editor. It should open a page that contains a single form element, with your placeholder text. (Note: There might be pop-up blocking in your brower. If so, you will need to unblock it.) 
+At this point, you should be able to click the RUN button (looks like a play button) on the CodeAnywhere editor. It should open a page that contains a single form element, with your placeholder text. (Note: there might be pop-up blocking in your brower. If so, you will need to unblock it.) 
 
 ![](http://i67.tinypic.com/idy5pe.jpg)
 
