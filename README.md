@@ -16,13 +16,15 @@ This should take no more than 30 minutes. If you're stuck on any one step for mo
 
 Let's get started!
 
+***Fork the repo
 [Fork](https://help.github.com/articles/fork-a-repo/) the **mean_adsk** repo you've been invited to: 
 
 ![](http://i68.tinypic.com/264rgao.jpg) 
 
 Keep this window on GitHub open as we'll come back to it shortly.
 
-Now we'll create our [CodeAnywhere cloud environment](https://codeanywhere.com/)). Sign up for a [CodeAnywhere](www.codeanywhere.com) account, and if use your GitHub account, you can do it in one click. 
+***Create the MEAN container
+Now we'll create our [CodeAnywhere cloud environment](https://codeanywhere.com/). Sign up for a [CodeAnywhere account](www.codeanywhere.com), and if use your GitHub account, you can do it in one click. 
 
 Once you're logged into CodeAnywhere, you'll see that the environment is pretty empty. To start building out our app, we'll need to create a new container. 
 
@@ -32,6 +34,7 @@ Go to **File > New Connection > Container** , and then scroll down to select **M
 
 By now, you've forked the repo and created your CodeAnywhere environment. But wait- [what is MEAN again?](http://learn.mean.io/). Our own ADSK engineers are primary contributors to the [mean.io](https://mean.io) project. Check out their Slack [channel](https://autodesk.slack.com/messages/gamedev-website/details/).
 
+***Clone the repo
 In CodeAnywhere, open an **SSH Terminal** by right-clicking on your new container: 
 
 ![](http://i68.tinypic.com/33axpog.jpg)
@@ -60,6 +63,7 @@ We'll also need to run the following two commands, line by line (Disregard the n
 
 What just happened? [What's with all these commands?](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
 
+***Checkout the starter branch
 Next, run the following command to verify you have all of the available [branches](https://guides.github.com/activities/hello-world/) If you want to learn more about branches, go [here](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is):
  
    `git branch`
@@ -70,10 +74,12 @@ Checkout the starter branch:
  
    `git checkout starter`
 
+***Install dependencies
 We need to install dependencies by running the following command (What are dependencies? Good question. A simple explanation is that sometimes when you install programs, they rely on other programs to work, and these other programs are called dependencies. Further understanding is not necessary for the task at hand. Let's table it.): 
 
    `npm install`
 
+***Configure current working directory
 Now you need to open your connection's config file by right-clicking on your container and choosing "Config":
 
 ![](http://i66.tinypic.com/315bkep.jpg) 
