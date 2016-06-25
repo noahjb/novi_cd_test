@@ -267,3 +267,7 @@ $scope.deleteTodo = function(todo_id){
 Now, when you click on the checkbox, the item should be deleted from the database, and the list of todos should be refreshed.
 
 Congratulations! You've built your very first MEAN web application!
+
+## Next Section
+
+[Extra credit]()
