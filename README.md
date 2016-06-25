@@ -9,7 +9,7 @@ This workshop is designed to introduce you to the [MEAN stack](https://www.googl
 * [Section 0 Instructions](instructions/branch0.md): Setting up the database
 * [Section 1 Instructions](instructions/branch1.md): Setting up routes
 * [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
-* [Format](#course-format): Explanation of branches and processes
+* [Format](#workshop-format): Explanation of branches and processes
 
 ## Setting Up Your Cloud Environment
 This should take no more than 30 minutes. If you're stuck on any one step for more than a couple mintues, ask for help. If you finish early, look to help. 
@@ -55,7 +55,7 @@ We also want to navigate to the mean_adsk folder using the following command:
 
   `cd mean_adsk`
 
-We'll also need to run the following two commands, line by line (Disregard the nasty error message):
+We'll also need to run the following two commands, one line at a time (Disregard any nasty error messages):
  
    `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
    
@@ -99,7 +99,7 @@ You've finished creating and configuring your first cloud development environmen
 
 Welcome to the **new** normal.
 
-## A Few Words about the Workshop Format
+##Workshop Format
 
 We will be using a pre-configured MEAN container on a virtual integrated development environment. It comes preloaded with some of our dependencies, and will have many folders already in place. You can safely ignore all of the folders and files in the container _except_ for the folder that contains our respository (`/mean_adsk`).
 
