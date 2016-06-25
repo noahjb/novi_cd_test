@@ -1,18 +1,18 @@
-# Building a MEAN Stack Application
+# Building a MEAN Stack Web Application
 
-This is a course designed to introduce you to the MEAN stack and web development with Javascript. 
+Hello!
 
-MEAN stands for MongoDB, Express, AngularJS, and NodeJS. 
+This workshop is designed to introduce you to the [MEAN stack](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+mean+stack). It assumes your starting at close to absolute zero: no development experience, never written any JavaScript code previously, and coming in with just a willingness to learn through practice. 
 
 ## Table Of Contents
-* [Setup](#setting-up)
+* [Setup](#setting-up-your-cloud-environment)
 * [Section 0 Instructions](instructions/branch0.md): Setting up the database
 * [Section 1 Instructions](instructions/branch1.md): Setting up routes
 * [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
 * [Format](#course-format): Explanation of branches and processes
 
 ## Setting Up Your Cloud Environment
-This workshop assumes your starting at close to absolute zero: no development experience, never written any code previously, and coming in with just a willingness to learn through practice. Setting up your cloud environment should take no more than 30 minutes. If you're grinding on something for more than 3 mintues, ask for help. If you finish early, look to help. 
+This should take no more than 30 minutes. If you're grinding on any one thing for more than 3 mintues, ask for help. If you finish early, look to help. 
 
 Let's get started!
 
