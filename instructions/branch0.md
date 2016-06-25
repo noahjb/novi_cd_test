@@ -56,7 +56,7 @@ app.use(morgan('dev')); // Logs every HTTP request to the console
 app.use(bodyParser.json()); // Parses app
 ```
 
-It's not super important that you understand all the details. But can you see some patterns around the use of the function `require(...)` and `app.use(...)`?
+It's not super important that you understand all the details. But can you see some patterns around the use of the functions `require(...)` and `app.use(...)`?
 
 ###Connect to database
 In this section, we want to connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain JavaScript.
