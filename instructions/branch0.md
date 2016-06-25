@@ -17,7 +17,7 @@ Here is the folder structure as is:
 
 ## Package.json and Installing Dependencies with NPM
 
-package.json is used to configure the NPM package manager (<a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank">What is NPM?</a>). We can list dependencies and set up commands in this file. 
+package.json is used to configure the NPM package manager ([What is NPM?](https://docs.npmjs.com/getting-started/what-is-npm)). We can list dependencies and set up commands in this file. 
 
 If you haven't already, run the following command:
 
