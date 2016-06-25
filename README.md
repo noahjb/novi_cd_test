@@ -28,7 +28,7 @@ Let's get started!
 Keep this window on GitHub open as we'll come back to it shortly.
 
 ###Create the MEAN container
-Now we'll create our [CodeAnywhere cloud environment](https://codeanywhere.com/). Sign up for a [CodeAnywhere account](www.codeanywhere.com), and if use your GitHub account, you can do it in one click. 
+Now we'll create our [CodeAnywhere cloud environment](https://codeanywhere.com/). Sign up for a [CodeAnywhere account](https://codeanywhere.com), and if use your GitHub account, you can do it in one click. 
 
 Once you're logged into CodeAnywhere, you'll see that the environment is pretty empty. To start building out our app, we'll need to create a new container. 
 
