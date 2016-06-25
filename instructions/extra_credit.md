@@ -8,7 +8,7 @@ We'd like to see your app support [CRUD](https://en.wikipedia.org/wiki/Create,_r
 
 You'll need at a minimum to make changes to...
 - Routes in `server.js`
-- Add logic to handle updates in 'mainController`
+- Add logic to handle updates in `mainController`
 - Make changes to the front-end in `index.html`.
 
 When you're done writing and testing your code, feel free to make a [pull request](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=how%20to%20make%20a%20pull%20request) to this repo.
@@ -23,4 +23,10 @@ Use [Jasmine](http://jasmine.github.io/2.4/node.html) to create BDD-style tests 
 
 Per usual: pull requests wanted.
 
-##Requirement 4: 
+##Requirement 4: User authorization
+1.  Implement simple [user authorization](https://www.sitepoint.com/user-authentication-mean-stack/)
+2.  Implement [OAuth](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=oauth%20meaning)
+3.  Implement an authentication [service](https://www.sitepoint.com/user-authentication-mean-stack/)
+
+##Requirement 4: Improve application structure
+- [Restructure](https://scotch.io/tutorials/node-and-angular-to-do-app-application-organization-and-structure) the app
