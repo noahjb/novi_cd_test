@@ -4,7 +4,7 @@ If you're at this point, you've probably finished building our little ToDo web a
 Your ToDo app is pretty simple [SPA](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=single%20page%20application) right now: it queries a database, lists the result of that query to a web page, allows you to add and delete items from the database, and that's about it. You've basically built an app that does CRD (Create, Read, Delete). 
 
 ##Requirement 1: Allow updates to existing items in the database
-We'd like to see full [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) in your app. 
+We'd like to see your app support [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). 
 
 You'll need at a minimum to make changes to...
 - Routes in `server.js`
@@ -12,3 +12,15 @@ You'll need at a minimum to make changes to...
 - Make changes to the front-end in `index.html`.
 
 When you're done writing and testing your code, feel free to make a [pull request](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=how%20to%20make%20a%20pull%20request) to this repo.
+
+##Requirement 2: Sort and filter the items on the web page
+We want [this](https://scotch.io/tutorials/sort-and-filter-a-table-using-angular) to all occur on the front-end in `index.html` using Angular.
+
+When you've tested it out, submit a pull request.
+
+##Requirement 3: Test the routes with Jasmine
+Use [Jasmine](http://jasmine.github.io/2.4/node.html) to create BDD-style tests for your routes.
+
+Per usual: pull requests wanted.
+
+##Requirement 4: 
