@@ -295,4 +295,4 @@ Congratulations! You've built your very first MEAN web application!
 
 ## Next Section
 
-[Extra credit]()
+[Extra credit](./extra_credit.md)
