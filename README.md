@@ -108,4 +108,4 @@ You can checkout any of the solution branches using the following command:
 
 ## Next Section
 
-* [Section 0 Instructions](instructions/branch0.md): Setting up the database
+* [Setting up the database](instructions/branch0.md) 
