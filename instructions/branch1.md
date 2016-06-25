@@ -1,4 +1,5 @@
 # Setting up API Routes and Angular Routes
+This part of the workshop should take no more than 75 minutes.
 
 We will create routes on the server to let the server know what we need to do whenever we receive an HTTP request for a particular URL. A common convention for defining private routes for use by your application is to prefix the routh with `/api/`.
 
