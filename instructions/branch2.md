@@ -25,7 +25,7 @@ function mainController($scope, $http){
 ```
 
 ###Use controller in HTML
-Open `index.html` and define the use of the `mainController`. Find `<body>` element and add the following code:
+Open `index.html` and define the use of the `mainController`. Find the `<body>` element and add code so it looks like this:
 
 ```html
 <body ng-controller="mainController">
@@ -46,7 +46,7 @@ function mainController($scope, $http){
 ```
 
 ###Define a form
-Now back in `index.html` create a form within the `<div class="container">` element:
+Now back in `index.html` create a form within the `<div class="container">` element so your code looks like this:
 
 ```html
 <body ng-controller="mainController">
