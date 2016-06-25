@@ -68,10 +68,9 @@ mongoose.connect('mongodb://localhost/app');
 ```
 
 ###Define schema
-We need to define the variable `toDoSchema` that will be used to define the Mongoose schema (structure) of the ToDo object in the database:
+We need to define the variable `toDoSchema` that will be used to define the Mongoose schema (structure) of the ToDo object in the database. Add the following code to `server.js`, under the appropriate comment:
 
 ```javascript
-// DEFINE MONGOOSE SCHEMA
 var toDoSchema = new mongoose.Schema({ 
     text: {
         type: String, 
@@ -82,7 +81,7 @@ var toDoSchema = new mongoose.Schema({
 });
 ```
 
-Let's take a minute to walk through the code we just used.
+Let's take a minute to walk through this code.
 
 We started by declaring a variable called `toDoSchema`...
 
