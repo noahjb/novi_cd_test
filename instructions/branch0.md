@@ -61,7 +61,7 @@ It's not super important that you understand all the details. But can you see so
 ###Connect to database
 In this section, we want to connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain JavaScript.
 
-In `server.js`, connect to Mongoose (Not sure how to do this? Copy/paste or type the following code on the line under the appropriate comment:
+In `server.js`, connect to Mongoose. Not sure how? Copy/paste or type the following code on the line under the appropriate comment. Comments in JavaScript often look like this `\\Some comment text here`:
 
 ```javascript
 mongoose.connect('mongodb://localhost/app');
