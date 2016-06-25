@@ -1,4 +1,5 @@
 # Project Structure, Server Setup and Database Setup
+This part of the workshop should take no more than 60 minutes. If you find yourself stuck on any one step for more than 10 minutes, ask for help.
 
 ## Folder Structure
 
