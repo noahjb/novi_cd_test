@@ -105,3 +105,7 @@ The workshop is split into 3 sections. Failure is totally acceptable here and we
 You can checkout any of the solution branches using the following command: 
 
    `git checkout [BRANCH NAME]`
+
+## Next Section
+
+* [Section 0 Instructions](instructions/branch0.md): Setting up the database
