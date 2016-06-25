@@ -18,52 +18,110 @@ Here is the folder structure as is:
 
 package.json is used to configure the NPM package manager ([What is NPM?](https://docs.npmjs.com/getting-started/what-is-npm)). We can list dependencies and set up commands in this file. 
 
-- [ ] If you haven't already, run the command `npm install`, npm will check the `package.json` file and install Express and Mongoose. Your should now see a file structure in your terminal that looks like this: 
+If you haven't already, run the following command:
+
+    npm install 
+
+npm will check `package.json` and install Express and Mongoose. You should now see a file structure in your terminal that looks like this: 
 
 ![](http://i68.tinypic.com/10hr8mq.jpg)
 
 ## Node/Express Configuration
-
 In `package.json`, we indicated that our main file is `server.js`. This is where we will configure the entirety of our back-end. The back-end will perform the following tasks for our app: 
-* Connect to a Mongo database
-* Create our Mongoose models
+* Connect to our MongoDB database
+* Create our Mongoose database model
 * Define routes for our API ([A what now?](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what%20is%20an%20api))
 * Define routes for our Angular app
 
-At the top of `server.js`, we import the modules we'll be using to build this application. Then, we have some basic setup to define the port and define use of middleware.
+At the top of `server.js`, we import the modules we'll be using to build this application:
+
+```javascript
+// Define variables to hold all of the imported modules.
+var express = require('express'); 
+var mongoose = require('mongoose'); // Mongoose is an ORM for MongoDB
+var bodyParser = require('body-parser'); // Middleware that parses JSON
+var morgan = require('morgan'); // Middleware that logs HTTP requests to the console
+var methodOverride = require('method-override');
+``` 
+
+Then, we have some basic setup to define the port and define use of middleware:
+
+```javascript
+var port = process.env.PORT || 8080; // Defining the port that we're going to be using
+var app = express(); // Creating the application with express
+
+app.use(express.static(__dirname + '/public')); // Sets the location of the static files that we'll be serving
+app.use(morgan('dev')); // Logs every HTTP request to the console
+app.use(bodyParser.json()); // Parses app
+```
+
+At this point it's not super important that you understand all the details of the code. Can you see some patterns around the use of the function `require(...)` and `app.use(...)`?
 
 ### Setting up the Database
 In this section, we want to connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain JavaScript.
 
-- [ ] In `server.js` (the one under **mean_adsk**), connect to Mongoose (Not sure how to do this? Copy the following code and paste it on the line under the comment "Connect to mongo/mongoose."):
+In `server.js`, connect to Mongoose (Not sure how to do this? Copy/paste or type the following code on the line under the appropriate comment:
 
-     `mongoose.connect('mongodb://localhost/app'); `
+```javascript
+mongoose.connect('mongodb://localhost/app');
+```
 
-- [ ] Set up a Mongoose schema and model that will be used to define the structure of the ToDo object in the database:
-  - [ ] Define the variable `toDoSchema`:
-  
-     `var toDoSchema = new mongoose.Schema({ text: {type: String, default: ''}, complete: {type: Boolean, default: false} });`
-  
-    - In the above code, we initialize a variable called `toDoSchema` and set it equal to a `new mongoose.Schema({...})`
-    - Inside of the function call, we pass it an object that defines the properties on that model: 
+We need to define the variable `toDoSchema` that will be used to define the Mongoose schema (structure) of the ToDo object in the database:
 
-     `{ text: {type: String, default: ''}, complete: {type: Boolean, default: false} }`
- 
- - [ ] Create a Mongoose model called `ToDo`:
- 
-     `var ToDo = mongoose.model('ToDo', toDoSchema);`
-  
-    - Here, we initialize a variable called `ToDo` and set it equal to `mongoose.model('ToDo', toDoSchema)`;
-    - The first argument to mongoose.model() is the name of the model, `ToDo`, and the second argument is the schema that defines the properties on that model, `toDoSchema`. 
-    - Mongoose automatically creates an `_id` for every instance of the ToDo object in the database.
+```javascript
+// DEFINE MONGOOSE SCHEMA
+var toDoSchema = new mongoose.Schema({ 
+    text: {
+        type: String, 
+        default: ''}, 
+    complete: {
+        type: Boolean, 
+        default: false} 
+});
+```
 
-Don't forget to save `server.js` before moving on.
+Let's take a minute to walk through the code we just used.
+
+We started by declaring a variable called `toDoSchema`...
+
+```javascript
+var toDoSchema 
+```
+
+... and then setting it equal to a `new mongoose.Schema({...})`...
+
+```javascript
+var toDoSchema = new mongoose.Schema({ 
+```
+
+... and inside of the function call, we passed it an object that defines the properties of that model: 
+
+```javascript
+// DEFINE MONGOOSE SCHEMA**:
+var toDoSchema = new mongoose.Schema({ 
+    text: {
+        type: String, 
+        default: ''}, 
+    complete: {
+        type: Boolean, 
+        default: false} 
+});
+```
+
+We haven't covered objects or for that matter properties, but see if you can identify the two properties, and their `types`.
+
+Now let's Create a Mongoose model called `ToDo`:
+
+```javascript
+var ToDo = mongoose.model('ToDo', toDoSchema);
+```
+
+Here, we initialized a variable called `ToDo` and set it equal to `mongoose.model('ToDo', toDoSchema)`. The first argument to `mongoose.model(...)` is the name of the model, `'ToDo'`, and the second argument is the schema that defines the properties on that model, `toDoSchema`, which is the same schema you defined earlier. Mongoose automatically creates an `_id` for every instance of the `ToDo` object in the database.
+
+Now is a good time to save `server.js`.
 
 For more information: [Mongoose Connect](http://mongoosejs.com/docs/connections.html) | [Mongoose Models](http://mongoosejs.com/docs/models.html)
 
-## What just happened? 
-Let's pull back the focus for a minute and see if we can parse what we just accomplished. 
-
 ## Next Section
 
-In the next section, we'll be setting up the back-end routes. [Section 1 Instructions](./branch1.md)
+[Setting up routes](./branch1.md)
