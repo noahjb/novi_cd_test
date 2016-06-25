@@ -12,7 +12,7 @@ This workshop is designed to introduce you to the [MEAN stack](https://www.googl
 * [Format](#course-format): Explanation of branches and processes
 
 ## Setting Up Your Cloud Environment
-This should take no more than 30 minutes. If you're grinding on any one thing for more than 3 mintues, ask for help. If you finish early, look to help. 
+This should take no more than 30 minutes. If you're stuck on any one step for more than a couple mintues, ask for help. If you finish early, look to help. 
 
 Let's get started!
 
