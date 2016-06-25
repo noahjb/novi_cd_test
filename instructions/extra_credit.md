@@ -29,4 +29,4 @@ Per usual: pull requests wanted.
 3.  Implement an authentication [service](https://www.sitepoint.com/user-authentication-mean-stack/)
 
 ##Requirement 4: Improve application structure
-- [Restructure](https://scotch.io/tutorials/node-and-angular-to-do-app-application-organization-and-structure) the app
+- [Restructure](https://scotch.io/tutorials/angularjs-best-practices-directory-structure) the app so it's more modular and easier to test.
