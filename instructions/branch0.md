@@ -30,7 +30,7 @@ npm will check `package.json` and install Express and Mongoose. You should now s
 In `package.json`, we indicated that our main file is `server.js`. This is where we will configure the entirety of our back-end. The back-end will perform the following tasks for our app: 
 * Connect to our MongoDB database
 * Create our Mongoose database model
-* Define routes for our API ([A what now?](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what%20is%20an%20api))
+* Define routes for our [API](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what%20is%20an%20api))
 * Define routes for our Angular app
 
 At the top of `server.js`, you should see the code that imports the modules we'll be using to build our application:
@@ -57,7 +57,7 @@ app.use(bodyParser.json()); // Parses app
 
 It's not super important that you understand all the details. But can you see some patterns around the use of the function `require(...)` and `app.use(...)`?
 
-### Setting up the Database
+###Connect to database
 In this section, we want to connect to the database and set up a model. A model is a constructor function that will return an instance of a specially formatted object that is stored in the database. Mongoose is an abstraction layer between the server and the database that makes it easy to model objects using plain JavaScript.
 
 In `server.js`, connect to Mongoose (Not sure how to do this? Copy/paste or type the following code on the line under the appropriate comment:
