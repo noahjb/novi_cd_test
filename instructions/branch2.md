@@ -218,25 +218,29 @@ Your HTML code in `<body>` should now look like this:
 </body>
 ```
 
-Go ahead and test your code. You should now see a button underneath the form. Add an item to the database, refresh the page, and open the Chrome Developer tools. You should see that the initial `GET` request to the server now returns a response that contains items you've added to the database:
+Go ahead and test your code. 
+
+You should see a button underneath the form. Add some items, then refresh the page, and then open Chrome Developer tools. You should see that the initial `GET` request to the server now returns a response that contains the items you've added to the database:
 
 ![](http://i66.tinypic.com/w2ise1.jpg)
 
 ### Display items
+Now that we've written code that can add items to the database, we should be able to render something useful onto the page.
 
-Now that we've written code that will add items to the database, we should be able to render something useful onto the page.
-
-Add a todo list section to the HTML **above** the `todo-form` element:
+Add a todo list to `index.html` **above** `<div id="todo-form" class="row">`:
 
 ```html
+...
 <div id="todo-list" class="row">
   	<div class="col-sm-4 col-sm-offset-4">
    	
    	</div>    
 </div>
+<div id="todo-form" class="row">
+...
 ```
 
-We'll use the Angular directive [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) to dynamically generate HTML based on the data behind the scenes. We can iterate over the `todos` object and create an element on the page for each todo item.
+We'll use the Angular directive [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) to dynamically generate HTML based on the data behind the scenes. We can iterate over the `todos` object and create an element on the page for each todo item:
 
 ```html
 <div id="todo-list" class="row">
@@ -261,7 +265,7 @@ Add a [checkbox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 </div>
 ```
 
-What we want is that when the user clicks on the checkbox, it will delete the item from the database:
+What we want is when the user clicks on a checkbox next to an item, it will delete that item from the database:
 
 ```html
 <div id="todo-list" class="row">
@@ -273,11 +277,11 @@ What we want is that when the user clicks on the checkbox, it will delete the it
 </div>
 ```
 
-When we click on the checkbox, it will try to invoke `deleteTodo` and pass the current todo's `todo._id` property as an argument. As a reminder, the `_id` property is generated automatically by Mongoose.
+When we click on a checkbox, it will try to invoke `deleteTodo` and pass the current todo's `todo._id` property as an argument. As a reminder, the `_id` property is generated automatically by Mongoose.
 
 Test again. What's going on?
 
-We need to define the `deleteTodo` function in `mainController`:
+The last thing We need to do is define the `deleteTodo` function in `mainController`:
 
 ```javascript
 $scope.deleteTodo = function(todo_id){
@@ -292,7 +296,7 @@ $scope.deleteTodo = function(todo_id){
    	}; 
 ```
 
-Now, when you click on the checkbox, the item should be deleted from the database, and the list of todos should be refreshed automatically.
+Now, when you click on a checkbox, the item next to it should be deleted from the database, and the list of todos should be refreshed automatically.
 
 Congratulations! You've built your very first MEAN web application!
 
