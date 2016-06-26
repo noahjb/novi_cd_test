@@ -187,7 +187,7 @@ app.post('/api/todos', function(request, response){
 
 The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
 
-###Add items to the database
+###Invoke `createTodo()`
 We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
 
 ```html
