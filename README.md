@@ -43,21 +43,21 @@ In CodeAnywhere, open an **SSH Terminal** by right-clicking on your new containe
 
 ![](http://i68.tinypic.com/33axpog.jpg)
 
-We're going to [clone](https://help.github.com/articles/cloning-a-repository/) the repository we forked earlier to our CodeAnywhere cloud environment. Go to your open GitHub window and copy the repository link using “**Clone with HTTPS**”: 
+We're going to [clone](https://help.github.com/articles/cloning-a-repository/) the repository we forked earlier to our CodeAnywhere cloud environment. Go to your open GitHub window and copy the repository link with the **Clone with HTTPS** option: 
 
 ![](http://i64.tinypic.com/szhhd4.jpg) 
 
-Once you've copied the link, go back to the SSH terminal in CodeAnywhere and type in the following command (The SSH terminal doesn't allow keyboard pasting (Ctrl+v), so you'll need to use the browser's right-click Paste function): 
+Once you've copied the link, go back to the SSH terminal in CodeAnywhere and type in the following command followed by pasting the repository link (Ctrl+A then Ctrl+V): 
  
-   `git clone [PASTE YOUR LINK HERE]`
+   `git clone [PASTE REPO LINK HERE]`
 
-[You may get challenged here to enter your GitHub username and password.]
+[You may get challenged here to enter your GitHub username and password]
 
 Do you see a **mean_adsk** folder on the left-hand side of the CodeAnywhere environment? No? Right-click the container and **Refresh**. 
 
 ![](http://i63.tinypic.com/52yzyq.jpg)
 
-We also want to navigate to the mean_adsk folder using the following command: 
+We also want to navigate to the **mean_adsk** folder using the following command: 
 
   `cd mean_adsk`
 
@@ -67,7 +67,7 @@ We'll also need to run the following two commands, one line at a time (Disregard
    
    `git fetch --all`
 
-[You may get challenged for your GitHub credentials after the `git fetch --all` command.]
+[You may get challenged for your GitHub credentials after the `git fetch --all` command]
 
 What just happened? [What's with all these commands?](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
 
