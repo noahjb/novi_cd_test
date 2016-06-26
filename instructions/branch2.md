@@ -143,7 +143,7 @@ Go ahead and test the code. You should see a page that contains a single form el
 ![](http://i67.tinypic.com/idy5pe.jpg)
 
 ###Debug with Chrome Developer tools
-[Open up Chrome Developer Tools](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chrome%20developer%20tools) and take a look at the Console tab. 
+Open up [Chrome Developer Tools](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chrome%20developer%20tools) and take a look at the Console tab. 
 
 We can see that upon the initial page load, we sent a `GET` request to our own server and then responded with an empty object.
 
