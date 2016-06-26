@@ -12,7 +12,7 @@ Good luck!
 * [Setting Up Your Cloud Environment](#setting-up-your-cloud-environment)
 * [Setting up the database](instructions/branch0.md) 
 * [Setting up routes](instructions/branch1.md)
-* [Building the Angular Front-End](instructions/branch2.md) 
+* [Building the Angular front-End](instructions/branch2.md) 
 * [Workshop Format](#workshop-format)
 
 ## Setting Up Your Cloud Environment
