@@ -67,7 +67,7 @@ Now back in `index.html` create a form within the `<div class="container">` elem
 
 Let's take a sec to walk through this bit.
 
-In the `<input>` element we have a [directive](https://docs.angularjs.org/api/ng/directive/ngModel) `ng-model='formData.text'`. This binds the value in the input form to the property `text` on the provided model `formData`,  which lives on the `$scope`, which we defined earlier in `mainController`. The `$scope` is available from within the HTML block that references the controller: `<body ng-controller="mainController">`. 
+In the `<input>` element we have a [directive](https://docs.angularjs.org/api/ng/directive/ngModel) `ng-model='formData.text'`. This binds the value in the input form to the property `text` on the provided model `formData`,  which lives on the `$scope`, which was what we defined earlier in `mainController`. `$scope` is available from within the HTML block that references the controller `<body ng-controller="mainController">`. 
 
 What do you think will happen if we test our app now?
 
