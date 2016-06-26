@@ -9,11 +9,11 @@ The workshop is 1/4 lecture and 3/4 hands-on, with the first 60 minutes dedicate
 Good luck!
 
 ## Table Of Contents
-* [Setup](#setting-up-your-cloud-environment)
-* [Section 0 Instructions](instructions/branch0.md): Setting up the database
-* [Section 1 Instructions](instructions/branch1.md): Setting up routes
-* [Section 2 Instructions](instructions/branch2.md): Building the Angular Front-End
-* [Format](#workshop-format): Explanation of branches and processes
+* [Setting Up Your Cloud Environment](#setting-up-your-cloud-environment)
+* [Setting up the database](instructions/branch0.md) 
+* [Setting up routes](instructions/branch1.md)
+* [Building the Angular Front-End](instructions/branch2.md) 
+* [Workshop Format](#workshop-format)
 
 ## Setting Up Your Cloud Environment
 This should take no more than 30 minutes. If you're stuck on any one step for more than a couple mintues, ask for help. If you finish early, look to help. 
