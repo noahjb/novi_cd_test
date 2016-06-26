@@ -150,12 +150,12 @@ We can see that upon the initial page load, we sent a `GET` request to our own s
 
 ![](http://i64.tinypic.com/21djrit.jpg)
 
-The data property is an array that would normally contain the todo items that exist in the database. As you can see, we currently do not have any todo items in the database.
+The `data` property is an array that would normally contain the todo items that exist in the database. As you can see, we currently do not have any todo items in the database.
 
 ### Add items to the database
 Let's write a function that adds an item to the database. This will live as a method on the `$scope` object. Adding the method to the `$scope` object will allow us the ability to call it from within the HTML. 
 
-We now create a method on the `$scope` called `createTodo`. `createTodo` will be invoked when the user clicks the submit button on the `form` element:
+Create a function on `$scope` called `createTodo`. `createTodo` will be invoked when the user clicks the submit button on the `<form>` element in `'index.html`, which we haven't added yet:
 
 ```javascript
 $scope.createTodo = function() {
@@ -174,19 +174,19 @@ $scope.createTodo = function() {
 
 So what's really going?
 
-Remember in `server.js` we used Mongoose's `create` method to add items to the database:
+Recall that in `server.js` we used Mongoose's `create` method to add items to the database...
 
 ```javascript
 app.post('/api/todos', function(request, response){
   	// Use Mongoose's .create() method to create a new item. 
   	ToDo.create({
-      	// The text comes from the AJAX request sent from Angular.
-       	text: request.body.text,
-        complete: false
-   		}, function(err, todo){...
+      		// The text comes from the AJAX request sent from Angular.
+       		text: request.body.text,
+        	complete: false
+   	}, function(err, todo){...
 ```
 
-The text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
+... and the text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
 
 ###Invoke `createTodo()`
 We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
