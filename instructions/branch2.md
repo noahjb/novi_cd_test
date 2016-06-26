@@ -1,4 +1,4 @@
-# Creating an Angular Front-End (User interface)
+#Building an Angular Front-End (User interface)
 You have until 3PM to complete this part of the workshop.
 
 But before we get into it, why don't we test our app? Since we used a cloud development environment like Codeanywhere, one of the benefits is your code is already "in the cloud" and the amount of work to deploy it "to the cloud" is minimal. In fact, since we started off with a preconfigured MEAN container, we're actually one click away from "running" our code. 
