@@ -1,4 +1,4 @@
-# Building a MEAN Stack Web Application
+# Building a MEAN Web Application
 
 Hello!
 
