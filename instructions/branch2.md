@@ -105,7 +105,7 @@ After the HTTP request is made, we use the `.then(...)` method to handle the nex
 
 On a successful `GET` request to the `/api/todos` route, we'll expect the response to contain an object that has all of the todos that exist in the database. We need to store this response object on the `$scope`. We also need to add some basic error handling in case the `GET` request fails. 
 
-For the `successCallback` store the `response.data` onto the `$scope`:
+For the `successCallback`, store the `response.data` onto the `$scope`:
 
 ```javascript
 $http({
@@ -122,7 +122,7 @@ $http({
   	});
 ```
 
-For the errorCallback, log the error to the console:
+For the `errorCallback`, log the error to the console:
 
 ```javascript
 $http({
@@ -139,7 +139,7 @@ $http({
   	});
 ```
 
-Go ahead and test the code. You should see a page that contains a single form element, with your placeholder text. (Note: there might be pop-up blocking in your brower. If so, you will need to unblock it.) 
+Go ahead and test the code. You should see a page that contains a single form element, with your placeholder text. (Note: turn off pop-up blocking in your brower) 
 
 ![](http://i67.tinypic.com/idy5pe.jpg)
 
