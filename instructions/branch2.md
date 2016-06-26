@@ -155,7 +155,7 @@ The `data` property is an array that would normally contain the todo items that 
 ### Add items to the database
 Let's write a function that adds an item to the database. This will live as a method on the `$scope` object. Adding the method to the `$scope` object will allow us the ability to call it from within the HTML. 
 
-Create a function on `$scope` called `createTodo`. `createTodo` will be invoked when the user clicks the submit button on the `<form>` element in `'index.html`, which we haven't added yet:
+Create a function on `$scope` called `createTodo`. `createTodo` will be invoked when the user clicks the submit button on the `<form>` element in `index.html`, which we haven't added yet:
 
 ```javascript
 $scope.createTodo = function() {
@@ -172,8 +172,7 @@ $scope.createTodo = function() {
     
 `$http.post(...)` is a shortcut method that is provided on the `$http` service. After we send the `POST` request along with the form's data `$scope.formData`, we reset the `formData` to be blank `$scope.formData = {};` and set the `$scope.todos` to the response data. 
 
-So what's really going?
-
+###What is going on?
 Recall that in `server.js` we used Mongoose's `create` method to add items to the database...
 
 ```javascript
@@ -189,13 +188,18 @@ app.post('/api/todos', function(request, response){
 ... and the text is coming from the `text` property that is being pulled off of the request body. In our scenario, we're sending the `$scope.formData` object as our request body.
 
 ###Invoke `createTodo()`
-We'll create a submit button on the form element. Underneath the `<input>` element, let's add a `<button>` element:
+We'll create a submit button on `<form>` in `index.html`. Within `<div class="form-group">`, and underneath the `<input>` element, let's add a `<button>` element:
 
 ```html
-<button type="submit" ng-click="createTodo()">Add New</button>
+<div class="form-group">
+	<input type="text" class="form-control input-lg text-center" placeholder="learn web dev with angular" ng-model='formData.text'>
+   	<button type="submit" ng-click="createTodo()">Add New</button>
+</div>
 ```
 
-Your HTML code in the `<body>` block should look like this:
+The Angular directive `ng-click` will invoke the function `createTodo()` whenever this element is clicked. We will use this to access the recently created `$scope.createTodo` function.
+
+Your HTML code in `<body>` should now look like this:
 
 ```html
 <body ng-controller="mainController">
@@ -213,10 +217,8 @@ Your HTML code in the `<body>` block should look like this:
   </div>
 </body>
 ```
-  
-The Angular directive `ng-click` will invoke the provided function whenever this element is clicked. We will use this to access the recently created `$scope.createTodo` function.
 
-Go ahead and test your code. You should now see a button underneath the form. Add an item to the database, and refresh the page. The initial `GET` request to the server should now return a response that contains the newly created todo item:
+Go ahead and test your code. You should now see a button underneath the form. Add an item to the database, refresh the page, and open the Chrome Developer tools. You should see that the initial `GET` request to the server now returns a response that contains items you've added to the database:
 
 ![](http://i66.tinypic.com/w2ise1.jpg)
 
