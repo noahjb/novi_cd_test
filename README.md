@@ -109,14 +109,12 @@ Welcome to the **new** normal.
 ##Workshop Format
 We will be using a pre-configured MEAN container on a virtual integrated development environment. It comes preloaded with some of our dependencies, and will have many folders already in place. You can safely ignore all of the folders and files in the container _except_ for the folder that contains our respository (`mean_adsk`).
 
-Failure is totally acceptable here and we find it an important part of learning. But we don't want that to stop you from progressing. We've made completed code available for each section can be found in their corresponding branch. For instance, Branch1 will contain all of the completed code from both Branch0 and Branch1.  
+Failure is totally acceptable here and we find it an important part of learning. But we don't want that to stop you from progressing. We've made solutions available for each of the corresponding branches. For instance, Branch1 will contain all of the solution code from both Branch0 and Branch1.  
 
 - Starter: This branch is going to be your main branch for development
-- Branch0: Contains completed database connection and model setup
-- Branch1: Contains completed API routes and Angular routes setup
-- Branch2: Contains completed Angular code and HTML view code
-
-(Don't worry if this all sounds like martian-speak. All in due time)
+- Branch0: Solution for database connection and model setup
+- Branch1: Solution for API routes and Angular routes setup
+- Branch2: Solution for Angular code and HTML view code
 
 You can checkout any of the solution branches using the following command in the CodeAnywhere SSH terminal: 
 
