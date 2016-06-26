@@ -108,4 +108,4 @@ app.get('*', function(request, response){
 
 ## Next Section
 
-[Setting up the front-end](./branch2.md)
+[Building an Angular front-end](./branch2.md)
