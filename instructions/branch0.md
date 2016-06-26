@@ -15,9 +15,9 @@ Here is the folder structure as is:
     ----- server.js      <!-- Backend Node file -->
     ----- instructions   <!-- Step by Step guide to building this application-->
 
-## Package.json and Installing Dependencies with NPM
+##Package.json and Installing Dependencies with NPM
 
-package.json is used to configure the NPM package manager ([What is NPM?](https://docs.npmjs.com/getting-started/what-is-npm)). We can list dependencies and set up commands in this file. 
+`package.json` is used to configure the [NPM](https://docs.npmjs.com/getting-started/what-is-npm) package manager. We can list dependencies and set up commands in this file. 
 
 If you haven't already, run the following command:
 
