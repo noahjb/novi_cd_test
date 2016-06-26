@@ -57,11 +57,11 @@ Do you see a **mean_adsk** folder on the left-hand side of the CodeAnywhere envi
 
 ![](http://i63.tinypic.com/52yzyq.jpg)
 
-We also want to navigate to the **mean_adsk** folder using the following command: 
+Now navigate to **mean_adsk** using the following command: 
 
   `cd mean_adsk`
 
-We'll also need to run the following two commands, one line at a time (Disregard any nasty error messages):
+We'll also run the following two commands, one line at a time (Disregard any nasty error messages):
  
    `git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done`
    
