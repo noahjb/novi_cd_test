@@ -281,7 +281,7 @@ When we click on a checkbox, it will try to invoke `deleteTodo` and pass the cur
 
 Test again. What's going on?
 
-The last thing We need to do is define the `deleteTodo` function in `mainController`:
+The last thing we need to do is define the `deleteTodo` function in `mainController`:
 
 ```javascript
 $scope.deleteTodo = function(todo_id){
