@@ -34,6 +34,7 @@ Open `index.html` and define the use of the `mainController`. Find the `<body>` 
   </div>
 </body>
 ```
+What do you think this is doing `ng-controller="mainController"`?
 
 ###Store form data
 Back in `main.js`, in the controller, go ahead and define an object to store form data. It will live on the `$scope` object:
