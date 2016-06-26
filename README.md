@@ -69,7 +69,7 @@ We'll also need to run the following two commands, one line at a time (Disregard
 
 [You may get challenged for your GitHub credentials after the `git fetch --all` command]
 
-What just happened? [What's with all these commands?](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+What's up with all these [git commands](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)?
 
 ###Checkout the starter branch
 Next, run the following command to verify you have all of the available [branches](https://guides.github.com/activities/hello-world/) If you want to learn more about branches, go [here](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is):
