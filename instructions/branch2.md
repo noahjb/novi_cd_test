@@ -79,7 +79,7 @@ Soon we'll add a button to the form that will allow us to save the form's data t
 
 When we load the `mainController`, the first thing we'll do is send an HTTP request to the server in order to get all of the todo items from the database. 
 
-In the server, we built a request handler `app.get('/api/todos'...` that returns all of the todos from the database. 
+In `server.js`, we built a request handler `app.get('/api/todos'...` that returns all of the todos from the database with `response.json(todos)`. 
 
 Let's write the client-side code that will interact with that endpoint.
 
