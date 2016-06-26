@@ -83,16 +83,15 @@ Checkout the starter branch:
    `git checkout starter`
 
 ###Install dependencies
-We need to install dependencies by running the following command (What are dependencies? Good question. A simple explanation is that sometimes when you install programs, they rely on other programs to work, and these other programs are called dependencies. Further understanding is not necessary for the task at hand. Let's table it.): 
+We need to [install dependencies](https://docs.npmjs.com/cli/install) with the following command: 
 
    `npm install`
 
 ###Set current working directory
-Now you need to open your connection's config file by right-clicking on your container and choosing "Config":
+Open your connection's config file by right-clicking on your container and choosing "Config":
 
 ![](http://i66.tinypic.com/315bkep.jpg) 
 
-Almost done.
 In your config file, set the current working directory to point to your `mean_adsk` directory:  
 
    `"cwd": "~/workspace/mean_adsk"` 
@@ -108,18 +107,18 @@ You've finished creating and configuring your first cloud development environmen
 Welcome to the **new** normal.
 
 ##Workshop Format
+We will be using a pre-configured MEAN container on a virtual integrated development environment. It comes preloaded with some of our dependencies, and will have many folders already in place. You can safely ignore all of the folders and files in the container _except_ for the folder that contains our respository (`mean_adsk`).
 
-We will be using a pre-configured MEAN container on a virtual integrated development environment. It comes preloaded with some of our dependencies, and will have many folders already in place. You can safely ignore all of the folders and files in the container _except_ for the folder that contains our respository (`/mean_adsk`).
-
-The workshop is split into 3 sections. Failure is totally acceptable here and we find it an important part of learning. But we don't want that to stop you from progressing. To accomplish that, the completed code for each section can be found in their corresponding branch. For instance, Branch1 will contain all of the completed code from both Section 0 and Section 1.  
+Failure is totally acceptable here and we find it an important part of learning. But we don't want that to stop you from progressing. We've made completed code available for each section can be found in their corresponding branch. For instance, Branch1 will contain all of the completed code from both Branch0 and Branch1.  
 
 - Starter: This branch is going to be your main branch for development
 - Branch0: Contains completed database connection and model setup
 - Branch1: Contains completed API routes and Angular routes setup
 - Branch2: Contains completed Angular code and HTML view code
+
 (Don't worry if this all sounds like martian-speak. All in due time)
 
-You can checkout any of the solution branches using the following command: 
+You can checkout any of the solution branches using the following command in the CodeAnywhere SSH terminal: 
 
    `git checkout [BRANCH NAME]`
 
