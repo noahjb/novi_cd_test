@@ -7,7 +7,6 @@ This part of the workshop should take no more than 75 minutes.
 +   [Define `/POST` route](#define-post-route)
 +   [Define `/DELETE` route](#define-delete-route)
 +   [Define public routes (Serving static files)](#define-public-routes-serving-static-files)
-+   [Define model](#define-model)
 
 ###Creating a RESTful API
 We will create routes on the server to let the server know what we need to do whenever we receive an HTTP request for a particular URL. A common convention for defining private routes for use by your application is to prefix the routh with `/api/`.
