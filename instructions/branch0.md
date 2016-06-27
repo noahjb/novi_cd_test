@@ -3,8 +3,8 @@ This part of the workshop should take no more than 60 minutes. If you find yours
 
 ##What we'll cover in this section
 +   [Application Structure](#application-structure) 
-+   [Package.json and Installing Dependencies with NPM](#package.json-and-installing-dependencies-with-npm)
-+   [Node/Express Configuration](#node/express-configuration)
++   [Package.json and Installing Dependencies with NPM](#packagejson-and-installing-dependencies-with-npm)
++   [Node/Express Configuration](#nodeexpress-configuration)
 +   [Connect to database](#connect-to-database)
 +   [Define schema](#define-schema)
 +   [Define model](#define-model)
