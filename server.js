@@ -61,7 +61,7 @@ app.post('/api/todos', function(request, response){
 
 // Set up the `/DELETE` route for `/api/todos/:todo_id`
 app.delete('/api/todos/:todo_id', function(request, response){
-  console.log("IN REQ HANDLER", request.params)
+
   // Use Mongoose's ToDo.remove() function to remove one from the database
   ToDo.remove({
     _id: request.params.todo_id
@@ -82,7 +82,6 @@ app.delete('/api/todos/:todo_id', function(request, response){
 app.put('/api/todos/:todo_id', function(request, response){
 
   // Use the findByIdAndUpdate function to update the document in the database
-  console.log(request.body.complete);
   ToDo.findByIdAndUpdate(request.params.todo_id, {$set: {text: request.body.text, complete:request.body.complete }}, function(err, todo){
     if (err) {
       response.send(err);

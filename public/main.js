@@ -3,7 +3,7 @@ var todo = angular.module('todo', []);
 
 // CREATE AN ANGULAR CONTROLLER CALLED mainController 
 // IT TAKES TWO ARGUMENTS, $scope and $http
-todo.controller('mainController', function($scope, $http){
+todo.controller('TodoController', function($scope, $http){
   $scope.formData = {};
 
   // USE $HTTP GET REQUEST TO GATHER ALL TODOS FROM THE DATABASE
