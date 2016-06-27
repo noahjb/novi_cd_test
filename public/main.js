@@ -14,7 +14,7 @@ todo.controller('TodoController', function($scope, $http){
     url: '/api/todos'
   }).then(function successCallback(response){
     // Invoked asyncronously when the response is available
-    $scope.todos = response;
+    $scope.todos = response.data;
     console.log("response from server:", response);
   }, function errorCallback(response){
     // Called asyncronously if an error occurs or the server returns
