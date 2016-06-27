@@ -1,7 +1,10 @@
 # Project Structure, Server Setup and Database Setup
 This part of the workshop should take no more than 60 minutes. If you find yourself stuck on any one step for more than 10 minutes, ask for help.
 
-## Folder Structure
+##What we'll cover in this section
++   [Application Structure](#application-structure) 
+
+## Application Structure
 
 We're going to keep the folder structure of this application relatively simple. Our Node/Express server code will live in the `server.js` file. 
 
