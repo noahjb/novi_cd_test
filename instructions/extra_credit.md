@@ -28,5 +28,5 @@ Per usual: pull requests wanted.
 2.  Implement [OAuth](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=oauth%20meaning)
 3.  Implement an authentication [service](https://www.sitepoint.com/user-authentication-mean-stack/)
 
-##Requirement 4: Improve application structure
+##Requirement 5: Improve application structure
 - [Restructure](https://scotch.io/tutorials/angularjs-best-practices-directory-structure) the app so it's more modular and easier to test.
