@@ -3,9 +3,13 @@ This part of the workshop should take no more than 60 minutes. If you find yours
 
 ##What we'll cover in this section
 +   [Application Structure](#application-structure) 
++   [Package.json and Installing Dependencies with NPM](#package.json-and-installing-dependencies-with-npm)
++   [Node/Express Configuration](#node/express-configuration)
++   [Connect to database](#connect-to-database)
++   [Define schema](#define-schema)
++   [Define model](#define-model)
 
 ## Application Structure
-
 We're going to keep the folder structure of this application relatively simple. Our Node/Express server code will live in the `server.js` file. 
 
 Here is the folder structure as is:
