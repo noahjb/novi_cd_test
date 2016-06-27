@@ -5,6 +5,19 @@ But before we get into it, why don't we test our app? Since we used a cloud deve
 
 Take a moment and figure out how to do that. Found it? What happened? 
 
+##What we'll cover in this section
++   [Define a controller](#define-a-controller) 
++   [Use controller in HTML](#use-controller-in-html)
++   [Store form data](#store-form-data)
++   [Define a form](#define-a-form)
++   [GET the page](#get-the-page)
++   [Debug with Chrome Developer tools](#debug-with-chrome-developer-tools)
++   [Add items to the database](#add-items-to-the-database)
++   [What is going on?](#what-is-going-on)
++   [Invoke `createTodo()`](#invoke-createtodo)
++   [Display items](#display-items)
++   [Delete items](#delete-items)
+
 ###Define a controller
 In this section, we'll simultaneously create the HTML and Angular code. These work together to render the application.
 
