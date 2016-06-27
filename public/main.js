@@ -6,7 +6,7 @@ var todo = angular.module('todo', []);
 function mainController($scope, $http){
   $scope.formData = {};
 
-  $scope.editing = false;
+  // $scope.editing = false;
   // USE $HTTP GET REQUEST TO GATHER ALL TODOS FROM THE DATABASE
   // SEND A GET REQUEST TO '/api/todos'
   $http({
@@ -59,7 +59,7 @@ function mainController($scope, $http){
       })
       .error(function(error){
         console.error(error);
-      })
+      });
   };
 
 }

@@ -27,7 +27,7 @@
                     <input type="checkbox" ng-click="deleteTodo(todo._id)"> 
                     <label ng-click="editing = true" ng-hide='editing'>{{todo.text}}</label>
                     <span ng-show="editing">
-                        <input type="text" ng-model="todo.text" ng-required/>
+                        <input type="text" ng-model="todo.text"/>
                         <a data-ng-click="editing = false; editTodo(todo._id, todo.text)" class="glyphicon glyphicon-ok"> </a>
                     </span>
                 </div>
