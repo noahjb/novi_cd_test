@@ -47,4 +47,13 @@ function mainController($scope, $http){
       });
   };
 
+  $scope.editTodo = function(todo_id, todo_text){
+
+    
+  };
+
+  $scope.completeTodo = function(todo_id, complete){
+
+  };
+
 }
