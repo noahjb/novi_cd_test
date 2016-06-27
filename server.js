@@ -81,15 +81,11 @@ app.delete('/api/todos/:todo_id', function(request, response){
 
 // Set up the PUT route handler for updating the todo items
 app.put('/api/todos/:todo_id', function(request, response){
-  // console.log("request.params.todo_id", request.body)
-
-
+  // Use the findByIdAndUpdate function to update the document in the database
   ToDo.findByIdAndUpdate(request.params.todo_id, {$set: {text: request.body.text }}, function(err, todo){
     if (err) {
       response.send(err);
     }
-    
-    
   });
 
 });

@@ -48,17 +48,13 @@ function mainController($scope, $http){
       });
   };
 
+  // WRITE A FUNCTION ON THE $SCOPE OBJECT THAT WILL DELETE A TODO
+  // IT WILL MAKE A PUT REQUEST TO THE '/api/todos/:todo_id' ENDPOINT
   $scope.editTodo = function(todo_id, todo_text){
-
-    // todo_text = JSON.stringify(todo_text);
-    // $scope.editing = false;
-    console.log("in editTodo", todo_id, todo_text);
-    var url = '/api/todos/' + todo_id;
-    console.log(url);
-
+    var url = '/api/todos/' + todo_id;    
     $http.put(url, {text: todo_text})
       .success(function(data){
-        console.log("success in http put callback", data);
+        console.log("item", todo_id, "successfully updated");
         $scope.todos = data;
       })
       .error(function(error){
