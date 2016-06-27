@@ -29,9 +29,9 @@
         </div>
         <div id="todo-list" class="row">
             <div class="col-sm-4 col-sm-offset-4">
-                <div class="checkbox" ng-cloak ng-repeat="todo in todos">
+                <div class="checkbox" ng-repeat="todo in todos">
+                    <input type="checkbox" ng-click="todo.complete = !todo.complete; editTodo(todo._id, todo.text, todo.complete)">
                     <a data-ng-click="deleteTodo(todo._id)" class="glyphicon glyphicon-trash"></a>
-                    <input type="checkbox" ng-click="todo.complete = !todo.complete">
                     <label ng-click="editing = true" ng-hide='editing' ng-class="{complete: todo.complete}">{{todo.text}}</label>
                     <span ng-show="editing">
                         <input type="text" ng-model="todo.text"/>
