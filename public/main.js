@@ -3,9 +3,10 @@ var todo = angular.module('todo', []);
 
 // CREATE AN ANGULAR CONTROLLER CALLED mainController 
 // IT TAKES TWO ARGUMENTS, $scope and $http
-function mainController($scope, $http){
+todo.controller('TodoController', function($scope, $http){
   $scope.formData = {};
 
+  console.log("contoller loading");
   // USE $HTTP GET REQUEST TO GATHER ALL TODOS FROM THE DATABASE
   // SEND A GET REQUEST TO '/api/todos'
   $http({
@@ -47,4 +48,16 @@ function mainController($scope, $http){
       });
   };
 
-}
+  $scope.editTodo = function(todo_id, todo_text, complete){
+    var url = '/api/todos/' + todo_id;    
+    $http.put(url, {text: todo_text, complete:complete})
+      .success(function(data){
+        console.log("item", todo_id, "successfully updated");
+        $scope.todos = data;
+      })
+      .error(function(error){
+        console.error(error);
+      });
+  };
+
+});
