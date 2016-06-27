@@ -1,13 +1,19 @@
 # Setting up API Routes and Angular Routes
 This part of the workshop should take no more than 75 minutes.
 
+##What we'll cover in this section
++   [Creating a RESTful API](#creating-a-restful-api) 
++   [Define `/GET` route](#define-get-route)
++   [Define `/POST` route](#define-post-route)
++   [Define `/DELETE` route](#define-delete-route)
++   [Define public routes (Serving static files)](#define-public-routes-serving-static-files)
++   [Define model](#define-model)
+
+###Creating a RESTful API
 We will create routes on the server to let the server know what we need to do whenever we receive an HTTP request for a particular URL. A common convention for defining private routes for use by your application is to prefix the routh with `/api/`.
 
 We're going to be using the Express framework as a way to simplify our server code. Request handler functions built with Express will specify a particular HTTP verb and a particular route. The request handlers take a URL path and a function as arguments. 
 
-The function passed to the request handler takes two arguments: the request object (sent through the HTTP request) and the response object (what the server sends back to the requesting agent). From the request, we can get information about the user, the data the user has input into the front-end, and many other things. The response is an object that we manipulate in the request handler and send back to the requesting agent.
-
-## Creating a RESTful API
 Here are the routes we will build on the server:
 
 |HTTP Verb| URL | Action  |
@@ -38,7 +44,7 @@ app.get('/api/todos', function(request, response){
 });
 ```
 
-Take a minute to "talk" through this bit of code. Imagine you had to explain what it does to a five year old child. What do you think this line of code does `response.json(todos);`? 
+Let's take a minute to walk through this bit of code. The function passed to the request handler `app.get(...)` takes two arguments: the `request` object (sent through the HTTP request) and the `response` object (what the server sends back to the requesting agent). From the request, we can get information about the user, the data the user has input into the front-end, and many other things. The response is an object that we manipulate in the request handler and send back to the requesting agent.
 
 ###Define `/POST` route
 Next, we create a request handler for the `/POST` route for `/api/todos/`. Here we're using the [Mongoose Create](http://mongoosejs.com/docs/models.html) function to create a new document and add it to the database.
@@ -90,7 +96,7 @@ app.delete('/api/todos/:todo_id', function(request, response){
     });
 });
 ```
-###Define public routes (Serving up static files)
+###Define public routes (Serving static files)
 
 Next, we need to set up the route that will be public facing - the route that will return the static HTML file to the client. This HTML file will render the ToDo view.
 
