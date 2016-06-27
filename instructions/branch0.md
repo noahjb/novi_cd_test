@@ -2,25 +2,11 @@
 This part of the workshop should take no more than 60 minutes. If you find yourself stuck on any one step for more than 10 minutes, ask for help.
 
 ##What we'll cover in this section
-+   [Application Structure](#application-structure) 
 +   [Package.json and Installing Dependencies with NPM](#packagejson-and-installing-dependencies-with-npm)
 +   [Node/Express Configuration](#nodeexpress-configuration)
 +   [Connect to database](#connect-to-database)
 +   [Define schema](#define-schema)
 +   [Define model](#define-model)
-
-## Application Structure
-We're going to keep the folder structure of this application relatively simple. Our Node/Express server code will live in the `server.js` file. 
-
-Here is the folder structure as is:
-
-    - mean_adsk
-    ----- public         <!-- holds our front-end Angular files -->
-    --------- main.js    <!-- Angular code -->
-    --------- index.html <!-- main HTML view -->
-    ----- package.json   <!-- npm configuration file -->
-    ----- server.js      <!-- Backend Node file -->
-    ----- instructions   <!-- Step by Step guide to building this application-->
 
 ##Package.json and Installing Dependencies with NPM
 
@@ -41,6 +27,8 @@ In `package.json`, `server.js` is set as our `main` file. This is where we will 
 * Define routes for our [API](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what%20is%20an%20api)
 * Define routes for our Angular app
 
+In this course, we'll be building our back-end in one file. For extra credit, you can separate your files into a more modular file structure that is typically used in production applications.
+
 At the top of `server.js`, you should see the code that imports the modules we'll be using to build our application:
 
 ```javascript
@@ -48,8 +36,7 @@ At the top of `server.js`, you should see the code that imports the modules we'l
 var express = require('express'); 
 var mongoose = require('mongoose'); // Mongoose is an ORM for MongoDB
 var bodyParser = require('body-parser'); // Middleware that parses JSON
-var morgan = require('morgan'); // Middleware that logs HTTP requests to the console
-var methodOverride = require('method-override');
+var morgan = require('morgan'); // Middleware that logs HTTP requests to the console (for debugging)
 ``` 
 
 You'll also see that we have some code that defines the port and defines use of middleware:

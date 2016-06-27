@@ -4,14 +4,17 @@ If you're at this point, you've probably finished building our little ToDo web a
 Your ToDo app is a pretty simple [SPA](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=single%20page%20application): it queries a database, lists the result of that query to a web page, allows you to add and delete items from the database, and that's about it. You've basically built an app that does CRD (Create, Read, Delete). 
 
 ##Requirement 1: Allow updates to existing items in the database
+
 We'd like to see your app support [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). 
 
 You'll need at a minimum to make changes to...
-- Routes in `server.js`
-- Add logic to handle updates in `mainController`
-- Make changes to the front-end in `index.html`.
+- Routes in `server.js`: add a new route to handle `PUT` requests 
+- Add logic to handle updates in `TodoController`: create a function that makes `PUT` requests to the server
+- Make changes to the front-end in `index.html`: Add conditional logic to handle the updating view
 
 When you're done writing and testing your code, feel free to make a [pull request](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=how%20to%20make%20a%20pull%20request) to this repo.
+
+[Further instructions for this requirement can be found here.](updateDatabase.md)
 
 ##Requirement 2: Sort and filter the items on the web page
 We want [this](https://scotch.io/tutorials/sort-and-filter-a-table-using-angular) to all occur on the front-end in `index.html` using Angular.
