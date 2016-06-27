@@ -6,39 +6,43 @@
 
     <title>MEAN ToDo Application</title>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
-    <style>
-        html                    { overflow-y:scroll; }
-        body                    { padding-top:50px; }
-        #todo-list              { margin-bottom:30px; }
-    </style>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="main.js"></script>
 
 </head>
 
 <body ng-controller='mainController'>
     <div class="container">
-        <div id="todo-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <div class="checkbox" ng-repeat="todo in todos">
-                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                </div>
-            </div>
-        </div>
-
         <div id="todo-form" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <form> 
                     <div class="form-group">
                         <input type="text" class="form-control input-lg text-center" placeholder="learn web dev with angular" ng-model='formData.text'>
+                        <button type="submit" class="btn btn-success" ng-click="createTodo()">Add New</button>
                     </div>
-                    <button type="submit" ng-click="createTodo()">Add New</button>
+                    
                 </form>
             </div>
         </div>
+        <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="checkbox" ng-cloak ng-repeat="todo in todos">
+                    <a data-ng-click="deleteTodo(todo._id)" class="glyphicon glyphicon-trash"></a>
+                    <input type="checkbox" ng-click="todo.complete = !todo.complete">
+                    <label ng-click="editing = true" ng-hide='editing' ng-class="{complete: todo.complete}">{{todo.text}}</label>
+                    <span ng-show="editing">
+                        <input type="text" ng-model="todo.text"/>
+                        <a data-ng-click="editing = false; editTodo(todo._id, todo.text)" class="glyphicon glyphicon-ok"> </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </body>
 

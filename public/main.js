@@ -3,7 +3,7 @@ var todo = angular.module('todo', []);
 
 // CREATE AN ANGULAR CONTROLLER CALLED mainController 
 // IT TAKES TWO ARGUMENTS, $scope and $http
-function mainController($scope, $http){
+todo.controller('mainController', function($scope, $http){
   $scope.formData = {};
 
   // USE $HTTP GET REQUEST TO GATHER ALL TODOS FROM THE DATABASE
@@ -13,7 +13,7 @@ function mainController($scope, $http){
     url: '/api/todos'
   }).then(function successCallback(response){
     // Invoked asyncronously when the response is available
-    $scope.todos = response;
+    $scope.todos = response.data;
     console.log("response from server:", response);
   }, function errorCallback(response){
     // Called asyncronously if an error occurs or the server returns
@@ -47,13 +47,17 @@ function mainController($scope, $http){
       });
   };
 
-  $scope.editTodo = function(todo_id, todo_text){
-
-    
+  $scope.editTodo = function(todo_id, todo_text, complete){
+    var url = '/api/todos/' + todo_id;    
+    $http.put(url, {text: todo_text, complete:complete})
+      .success(function(data){
+        console.log("item", todo_id, "successfully updated");
+        $scope.todos = data;
+      })
+      .error(function(error){
+        console.error(error);
+      });
   };
 
-  $scope.completeTodo = function(todo_id, complete){
+});
 
-  };
-
-}
