@@ -78,6 +78,22 @@ app.delete('/api/todos/:todo_id', function(request, response){
   });
 });
 
+
+// Set up the PUT route handler for updating the todo items
+app.put('/api/todos/:todo_id', function(request, response){
+  // console.log("request.params.todo_id", request.body)
+
+
+  ToDo.findByIdAndUpdate(request.params.todo_id, {$set: {text: request.body.text }}, function(err, todo){
+    if (err) {
+      response.send(err);
+    }
+    
+    
+  });
+
+});
+
 // Set up the GET route handler for all otherwise unspecified routes. This will render the HTML page.
 app.get('*', function(request, response){
   // __dirname is a keyword that pulls the absolute path to the current file

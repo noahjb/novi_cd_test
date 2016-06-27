@@ -23,8 +23,13 @@
     <div class="container">
         <div id="todo-list" class="row">
             <div class="col-sm-4 col-sm-offset-4">
-                <div class="checkbox" ng-repeat="todo in todos">
-                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                <div class="view" ng-repeat="todo in todos">
+                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> 
+                    <label ng-click="editing = true" ng-hide='editing'>{{todo.text}}</label>
+                    <span ng-show="editing">
+                        <input type="text" ng-model="todo.text" ng-blur="editing = false" ng-required/>
+                        <a data-ng-click="editing = false; editTodo(todo._id, todo.text)" class="glyphicon glyphicon-ok"> </a>
+                    </span>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ var todo = angular.module('todo', []);
 function mainController($scope, $http){
   $scope.formData = {};
 
+  $scope.editing = false;
   // USE $HTTP GET REQUEST TO GATHER ALL TODOS FROM THE DATABASE
   // SEND A GET REQUEST TO '/api/todos'
   $http({
@@ -13,7 +14,7 @@ function mainController($scope, $http){
     url: '/api/todos'
   }).then(function successCallback(response){
     // Invoked asyncronously when the response is available
-    $scope.todos = response;
+    $scope.todos = response.data;
     console.log("response from server:", response);
   }, function errorCallback(response){
     // Called asyncronously if an error occurs or the server returns
@@ -45,6 +46,24 @@ function mainController($scope, $http){
       .error(function(error){
         console.log("Error deleting todo_id", todo_id, ": ", error);
       });
+  };
+
+  $scope.editTodo = function(todo_id, todo_text){
+
+    // todo_text = JSON.stringify(todo_text);
+    // $scope.editing = false;
+    console.log("in editTodo", todo_id, todo_text);
+    var url = '/api/todos/' + todo_id;
+    console.log(url);
+
+    $http.put(url, {text: todo_text})
+      .success(function(data){
+        console.log("success in http put callback", data);
+        $scope.todos = data;
+      })
+      .error(function(error){
+        console.error(error);
+      })
   };
 
 }
