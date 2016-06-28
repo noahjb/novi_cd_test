@@ -11,7 +11,7 @@ After updating the HTML, we'll need to update the controller to handle those fea
 Finally, we need to create a new request handler on the server that will accept these `PUT` requests. In the request handler, we'll use a Mongoose function to update the database.
 
 After these updates, your app will look like this: 
-![](http://i67.tinypic.com/1zps9xg.jpg)
+![](http://i64.tinypic.com/bgeclx.jpg)
 
 ### Updating the View
 

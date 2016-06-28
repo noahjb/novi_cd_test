@@ -33,3 +33,34 @@ Per usual: pull requests wanted.
 
 ##Requirement 5: Improve application structure
 - [Restructure](https://scotch.io/tutorials/angularjs-best-practices-directory-structure) the app so it's more modular and easier to test.
+
+Our application structure looks like this:
+
+        - public         <!-- holds our front-end Angular files -->
+        ----- main.js    <!-- Angular code -->
+        ----- index.html <!-- main HTML view -->
+        - package.json   <!-- npm configuration file -->
+        - server.js      <!-- Backend Node file -->
+        - instructions   <!-- Step by Step guide to building this application-->
+
+Most of the time, we'll split out the functionality into related files. For instance, our server file would only contain code related to the structure of the server. We'd separate the routes and the database setup into other files.
+
+This is a simple app so our folder structure won't get too crazy, but this is what it would probably look like if we were to modularize it out even further.
+
+        - public/                 <!-- Holds our front-end Angular files -->
+        ----- index.html          <!-- Main HTML view -->
+        ----- styles.css          <!-- Styles page -->
+        ----- js/
+        ---------- main.js        <!-- Sets up the Angular module and injects the controllers -->
+        ---------- controllers/
+        --------------- TodoController.js
+        - app/
+        ----- routes.js           <!-- Defines the server routes-->
+        ----- models/             <!-- Folder to contain files for the different models + schemas we're storing-->
+        --------------- todo.js   <!-- todo model and schema -->
+        - package.json            <!-- npm configuration file -->
+        - server.js               <!-- Backend Node file -->
+        - instructions            <!-- Step by Step guide to building this application-->
+
+Angular encourages modularity by design. You can take code you wrote in one file and use it in another file. Having a modularized codebase is generally considered a good practice because it allows for better maintainability and [looser-coupling](https://en.wikipedia.org/wiki/Loose_coupling) of modules. [There are many ways to organize your Angular code file structure.](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)
+

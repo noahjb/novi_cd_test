@@ -216,18 +216,18 @@ Your HTML code in `<body>` should now look like this:
 
 ```html
 <body ng-controller="mainController">
-  <div class="container">
-    <div id="todo-form" class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center">
-        <form> 
-          <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="learn web dev with angular" ng-model='formData.text'>
-            <button type="submit" ng-click="createTodo()">Add New</button>
+    <div class="container">
+        <div id="todo-form" class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+          <form> 
+            <div class="form-group">
+              <input type="text" class="form-control input-lg text-center" placeholder="learn web dev with angular" ng-model='formData.text'>
+              <button type="submit" ng-click="createTodo()">Add New</button>
+            </div>
+          </form>
           </div>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
 </body>
 ```
 
@@ -240,16 +240,17 @@ You should see a button underneath the form. Add some items, then refresh the pa
 ### Display items
 Now that we've written code that can add items to the database, we should be able to render something useful onto the page.
 
-Add a todo list to `index.html` **above** `<div id="todo-form" class="row">`:
+Add a todo list to `index.html` **below** the closing `div` of the `<div id="todo-form" class="row">`:
 
 ```html
 ...
-<div id="todo-list" class="row">
-  	<div class="col-sm-4 col-sm-offset-4">
-   	
-   	</div>    
-</div>
 <div id="todo-form" class="row">
+
+<div id="todo-list" class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+    </div>    
+</div>
 ...
 ```
 
@@ -258,22 +259,21 @@ We'll use the Angular directive [`ng-repeat`](https://docs.angularjs.org/api/ng/
 ```html
 <div id="todo-list" class="row">
   	<div class="col-sm-4 col-sm-offset-4">
-		<div class="checkbox" ng-repeat="todo in todos">
-
-		</div>   	
+		    <div class="checkbox" ng-repeat="todo in todos">
+		    </div>   	
    	</div>    
 </div>
 ```
 
 ###Delete items
-Add a [checkbox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) element for every item in todos, using `ng-repeat`. This works just like a standard for-loop where we define a keyword (`todo`) to represent each individual value in the collection (`todos`). The following code should be added within the `todo-list`:
+Add a [checkbox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) element for every item in todos, using `ng-repeat`. This works just like a standard for-loop where we define a keyword (`todo`) to represent each individual value in the collection (`todos`). We're able to access the properties that are stored on each todo object. As you can see, we are using the `{{todo.text}}` which dynamically generates the HTML element and pulls the text from that specific todo item. The following code should be added within the `todo-list`:
 
 ```html
 <div id="todo-list" class="row">
   	<div class="col-sm-4 col-sm-offset-4">
-		<div class="checkbox" ng-repeat="todo in todos">
-			<input type="checkbox"> {{ todo.text }}
-		</div>   	
+		    <div class="checkbox" ng-repeat="todo in todos">
+			      <input type="checkbox"> {{ todo.text }}
+		    </div>   	
    	</div>    
 </div>
 ```
@@ -283,9 +283,9 @@ What we want is when the user clicks on a checkbox next to an item, it will dele
 ```html
 <div id="todo-list" class="row">
   	<div class="col-sm-4 col-sm-offset-4">
-		<div class="checkbox" ng-repeat="todo in todos">
-			<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-		</div>   	
+		    <div class="checkbox" ng-repeat="todo in todos">
+			      <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+		    </div>   	
    	</div>    
 </div>
 ```
