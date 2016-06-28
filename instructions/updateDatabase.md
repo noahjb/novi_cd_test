@@ -1,15 +1,17 @@
 # Allow Updates to Todo Items
 
-Create, Read, Update, and Delete [(CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) are the four basic functions of persistent storage. Our application supports Creation, Read, and Deletion. This section will guide you through modifying the application in a way to support Updates to documents in the database.
+Create, Read, Update, and Delete [(CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) are the four basic functions of persistent storage. Our application supports Creation, Read, and Deletion. This section will guide you through modifying the application in a way to support Updates to documents in the database. We'll enable two types of changes to the items in the database: marking them as complete, and changing their text.
 
 On the HTML page, we'll update the view so that when a user clicks on a task, we hide the task text and replace it with a text input form. So, the HTML will contain the code for the task text AND the code for the input form, but the code for the input form will be hidden. We can use some logic to switch what elements are hidden. To the user, it will look like a seamless transition from plain text on the page to a form where they can edit that text.
+
+We'll also change the functionality of the checkbox so that it allows the user to mark an item as completed. We will also add an additional button that allows the user to remove an item from the list.
 
 After updating the HTML, we'll need to update the controller to handle those features. We'll add an `editTodo` function that will make an HTTP `PUT` request to the server. The function will grab the new text from the item on the page and send it to the server.
 
 Finally, we need to create a new request handler on the server that will accept these `PUT` requests. In the request handler, we'll use a Mongoose function to update the database.
 
 After these updates, your app will look like this: 
-![](http://i67.tinypic.com/1zps9xg.jpg)
+![](http://i64.tinypic.com/bgeclx.jpg)
 
 ### Updating the View
 
@@ -65,16 +67,54 @@ When the user clicks on this icon, it will set the `editing` variable to false, 
 
 ### Updating the Controller
 
-Add a new function to the controller that lives on the $scope object. It will be called `editTodo` and will use the [`$http.put(...)`](https://docs.angularjs.org/api/ng/service/$http#put) method to send a `PUT` request to the server.
+Add a new function to the controller that lives on the $scope object. It will be called `editTodo` and will use the [`$http.put(...)`](https://docs.angularjs.org/api/ng/service/$http#put) method to send a `PUT` request to the server. Reference the `$scope.deleteTodo` function to see how this works.
 
-The `$http.put(...)` method will take two arguments. The first is the URL that contains the specific `todo_id`. Reference the `$scope.deleteTodo` function to see how this works. The second argument is the data object.
+The `$http.put(...)` method will take two arguments. The first is the URL that contains the specific `todo_id`. The second argument is the data object.
 
+The `editTodo` function you create will take two arguments `(todo_id, todo_text)`. Later, we'll refactor this function for both forms of updates (changing todo text and marking an item as complete).
+
+Your code should look something like this:
+
+        $scope.editTodo = function(todo_id, todo_text){
+          // Concatenating a string to hold the URL for clarity
+          var url = '/api/todos/' + todo_id;    
+          // Using the PUT function, passing it the URL and the data object
+          $http.put(url, {text: todo_text})
+            .success(function(data){
+              console.log("item", todo_id, "successfully updated");
+              $scope.todos = data;
+            })
+            .error(function(error){
+              console.error(error);
+            });
+        };
+
+Let's go back to the `index.html` file and take a look at the HTML.
+
+As it currently stands, we should be able to edit tasks on our page. Let's separate the functionality that removes items from the database from the checkbox and move it into another anchor tag. After the checkbox input element, add this element:
+
+        <a data-ng-click="deleteTodo(todo._id)" class="glyphicon glyphicon-trash"></a>
+
+Users can click on the trash can image and delete the task from the list. Now let's allow users to mark items as complete. We do this by doing three things:
+
+Remove the functionality from the checkbox input element so that it stops deleting items. Let's add new functionality to the `ng-click` so that it edits the `complete` value on that `todo` object. 
+
+        <input type="checkbox" ng-click="todo.complete = !todo.complete; editTodo(todo._id, todo.text, todo.complete)">
+
+Update the `editTodo` function in the controller to accept the `todo.complete` value as the third argument. 
+        
+        $scope.editTodo = function(todo_id, todo_text, todo_complete){
+          
+          var url = '/api/todos/' + todo_id;    
+          
+          $http.put(url, {text: todo_text, complete: todo_complete})...
+
+Use the [ngClass](https://docs.angularjs.org/api/ng/directive/ngClass) directive to conditionally set a class onto the element. We'll reference this class in our CSS file so that the text gets appears with a strikethrough to indicate that the item is complete.
+
+        <label ng-click="editing = true" ng-hide='editing' ng-class="{complete: todo.complete}">{{todo.text}}</label>
 
 ### Updating the Server
 
 Add a new request handler that accepts `PUT` requests to the `/api/todos/:todo_id` endpoint. This request handler will use the Mongoose [`findByIdAndUpdate(...)`](http://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate) function to make changes to a single todo item at a time.
-
-
-
 
 
