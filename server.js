@@ -3,7 +3,6 @@ var express = require('express');
 var mongoose = require('mongoose'); // Mongoose is an ORM for MongoDB
 var bodyParser = require('body-parser'); // Middleware that parses JSON
 var morgan = require('morgan'); // Middleware that logs HTTP requests to the console
-var methodOverride = require('method-override'); 
 
 var port = process.env.PORT || 8080; // Defining the port that we're going to be using
 var app = express(); // Creating the application with express
