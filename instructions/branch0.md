@@ -106,7 +106,7 @@ var toDoSchema = new mongoose.Schema({
 We haven't covered objects or for that matter properties, but see if you can identify the two properties, and their `types`.
 
 ###Define model
-Now let's create a Mongoose model called `ToDo`:
+Now let's create a Mongoose model called `ToDo`, under the appropraite comment:
 
 ```javascript
 var ToDo = mongoose.model('ToDo', toDoSchema);
